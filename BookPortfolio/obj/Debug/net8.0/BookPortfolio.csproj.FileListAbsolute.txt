@@ -153,3 +153,4 @@ C:\Users\OwenWork\Documents\Tutorials\ASPnet\BookLibrary\BookPortfolio\obj\Debug
 C:\Users\OwenWork\Documents\Tutorials\ASPnet\BookLibrary\BookPortfolio\obj\Debug\net8.0\BookPortfolio.pdb
 C:\Users\OwenWork\Documents\Tutorials\ASPnet\BookLibrary\BookPortfolio\obj\Debug\net8.0\BookPortfolio.genruntimeconfig.cache
 C:\Users\OwenWork\Documents\Tutorials\ASPnet\BookLibrary\BookPortfolio\obj\Debug\net8.0\ref\BookPortfolio.dll
+C:\Users\OwenWork\Documents\Tutorials\ASPnet\BookLibrary\BookPortfolio\obj\Debug\net8.0\BookPortfolio.sourcelink.json

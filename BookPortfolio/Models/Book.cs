@@ -14,5 +14,7 @@ namespace BookPortfolio.Models
         public string genre { get; set; } = string.Empty;
         public string language { get; set; } = string.Empty;
 
+        public List<Portfolio> Portfolios { get; set; } = new List<Portfolio>();
+
     }
 }

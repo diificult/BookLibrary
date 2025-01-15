@@ -2,6 +2,7 @@ using BookPortfolio.Data;
 using BookPortfolio.Interfaces;
 using BookPortfolio.Models;
 using BookPortfolio.Repositorys;
+using BookPortfolio.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -85,6 +86,8 @@ builder.Services.AddAuthentication(options =>
 });
 
 builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+
 
 var app = builder.Build();
 

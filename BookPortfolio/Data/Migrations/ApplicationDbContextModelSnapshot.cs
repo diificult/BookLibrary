@@ -122,6 +122,21 @@ namespace BookPortfolio.Data.Migrations
                     b.ToTable("Books");
                 });
 
+            modelBuilder.Entity("BookPortfolio.Models.Portfolio", b =>
+                {
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.HasKey("AppUserId", "BookId");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("Portfolios");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -147,6 +162,20 @@ namespace BookPortfolio.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "5cc31fcf-f870-46a2-b8ce-f9c67c654bd0",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "c42ca443-37ee-4fd4-ac80-8050e5e7f30a",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -255,6 +284,25 @@ namespace BookPortfolio.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("BookPortfolio.Models.Portfolio", b =>
+                {
+                    b.HasOne("BookPortfolio.Models.AppUser", "AppUser")
+                        .WithMany("Portfolios")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookPortfolio.Models.Book", "Book")
+                        .WithMany("Portfolios")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Book");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -304,6 +352,16 @@ namespace BookPortfolio.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("BookPortfolio.Models.AppUser", b =>
+                {
+                    b.Navigation("Portfolios");
+                });
+
+            modelBuilder.Entity("BookPortfolio.Models.Book", b =>
+                {
+                    b.Navigation("Portfolios");
                 });
 #pragma warning restore 612, 618
         }
