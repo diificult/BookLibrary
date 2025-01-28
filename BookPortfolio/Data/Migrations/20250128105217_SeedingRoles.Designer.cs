@@ -4,6 +4,7 @@ using BookPortfolio.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookPortfolio.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250128105217_SeedingRoles")]
+    partial class SeedingRoles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -166,13 +169,13 @@ namespace BookPortfolio.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5c4c7d47-8380-49e4-a71e-29b89ff475b0",
+                            Id = "a8b5888f-e907-4112-b35f-3f787e5aeff1",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "f4df887a-5b6f-469b-996f-3b721bc13e45",
+                            Id = "ba0bf73e-9599-4bd0-91c8-a8932a878403",
                             Name = "User",
                             NormalizedName = "USER"
                         });

@@ -13,7 +13,7 @@ namespace BookPortfolio.Data
         }
 
         public DbSet<Book> books { get; set; }
-        public DbSet<Portfolio> porfs { get; set; }
+        public DbSet<Portfolio> portfolios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
