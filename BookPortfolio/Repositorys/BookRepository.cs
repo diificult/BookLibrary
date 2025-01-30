@@ -49,10 +49,6 @@ namespace BookPortfolio.Repositorys
                 {
                     books = query.IsDescending ? books.OrderByDescending(s => s.Author) : books.OrderBy(s => s.Author);
                 }
-                if (query.SortBy.Equals("Year", StringComparison.OrdinalIgnoreCase))
-                {
-                    books = query.IsDescending ? books.OrderByDescending(s => s.YearRelease) : books.OrderBy(s => s.YearRelease);
-                }
 
             }
 

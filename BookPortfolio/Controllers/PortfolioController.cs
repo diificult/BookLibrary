@@ -4,6 +4,7 @@ using BookPortfolio.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace BookPortfolio.Controllers
 {
@@ -14,11 +15,13 @@ namespace BookPortfolio.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly IPortfolioRepository _portfolioRepository;
         private readonly IBookRepository _bookRepository;
-        public PortfolioController(UserManager<AppUser> userManager, IPortfolioRepository portfolioRepository, IBookRepository bookRepository)
+        private readonly IOLService _olService;
+        public PortfolioController(UserManager<AppUser> userManager, IPortfolioRepository portfolioRepository, IBookRepository bookRepository, IOLService oLService)
         {
             _userManager = userManager;
             _portfolioRepository = portfolioRepository;
             _bookRepository = bookRepository;
+            _olService = oLService;
         }
         [HttpGet]
         [Authorize]
@@ -29,23 +32,33 @@ namespace BookPortfolio.Controllers
             var userPortfolio = await _portfolioRepository.GetUserPortfolio(appUser);
             return Ok(userPortfolio);
         }
-        [HttpGet]
+        [HttpPost]
         [Authorize]
-        public async Task<IActionResult> AddPortfolio(string ISBN_10)
+        public async Task<IActionResult> AddPortfolio(string ISBN)
         {
             var username = User.GetUsername();
             var appUser = await _userManager.FindByNameAsync(username);
-            var book = await _bookRepository.GetByISBNAsync(ISBN_10);
+            var book = await _bookRepository.GetByISBNAsync(ISBN);
             if (book == null)
             {
-                //Find book using API
+                book = await _olService.FindBookByISBNSync(ISBN);
+                if (book == null)
+                {
+                    return BadRequest("Book does not exist");
+
+                }
+                else
+                {
+                    Console.WriteLine("Book FOund");
+                    await _bookRepository.CreateAsync(book);
+                }
             }
             if (book == null)
             {
                 return BadRequest("Book not found");
             }
             var userPortfolio = await _portfolioRepository.GetUserPortfolio(appUser);
-            if (userPortfolio.Any(b => b.ISBN_10 == ISBN_10)) return BadRequest("Already in portfolio");
+            if (userPortfolio.Any(b => b.ISBN_10 == ISBN || b.ISBN_13 == ISBN)) return BadRequest("Already in portfolio");
 
             var portfolioModel = new Portfolio
             {
@@ -57,7 +70,7 @@ namespace BookPortfolio.Controllers
             else return Created();
         }
 
-        [HttpGet]
+        [HttpDelete]
         [Authorize]
         public async Task<IActionResult> DeletePortfolio(string ISBN_10)
         {

@@ -87,6 +87,9 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
+builder.Services.AddScoped<IOLService, OLService>();
+builder.Services.AddHttpClient<IOLService, OLService>();
 
 
 var app = builder.Build();

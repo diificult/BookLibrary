@@ -3,40 +3,75 @@
   "WorkspaceRootPath": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\service\\olservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:service\\olservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\interfaces\\iolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:interfaces\\iolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\controllers\\portfoliocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:controllers\\portfoliocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\interfaces\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:interfaces\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\mappers\\bookmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:mappers\\bookmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BookPortfolio_36647b7c_f825_4c9a_bfc3_ee711d069b81/True/SqlTable/dbo.Books.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\dtos\\book\\olbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:dtos\\book\\olbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\dtos\\book\\olauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:dtos\\book\\olauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\service\\olservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:service\\olservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\repositorys\\portfoliorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:repositorys\\portfoliorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\interfaces\\iportfoliorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:interfaces\\iportfoliorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\repositorys\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:repositorys\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\interfaces\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:interfaces\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\interfaces\\iportfoliorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:interfaces\\iportfoliorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\dtos\\book\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:dtos\\book\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\dtos\\book\\createbookrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:dtos\\book\\createbookrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,23 +86,7 @@
       "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BookPortfolio_36647b7c_f825_4c9a_bfc3_ee711d069b81/True/SqlTable/dbo.AspNetRoles.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\interfaces\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -76,10 +95,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\service\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:service\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\mappers\\bookmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:mappers\\bookmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\dtos\\account\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -96,14 +111,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\helpers\\bookqueryhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:helpers\\bookqueryhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\dtos\\book\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:dtos\\book\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|c:\\users\\owenwork\\documents\\tutorials\\aspnet\\booklibrary\\bookportfolio\\dtos\\book\\createbookrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{968C0E34-F6EB-4410-A7AC-242EE08F503D}|BookPortfolio.csproj|solutionrelative:dtos\\book\\createbookrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -112,64 +119,126 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 215,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IOLService.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Interfaces\\IOLService.cs",
-              "RelativeDocumentMoniker": "Interfaces\\IOLService.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Interfaces\\IOLService.cs",
-              "RelativeToolTip": "Interfaces\\IOLService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T21:57:19.253Z",
+              "DocumentIndex": 2,
+              "Title": "dbo.Books [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BookPortfolio_36647b7c_f825_4c9a_bfc3_ee711d069b81/True/SqlTable/dbo.Books.sql",
+              "ToolTip": "dbo.Books [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-30T12:39:00.915Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "BookMapper.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Mappers\\BookMapper.cs",
+              "RelativeDocumentMoniker": "Mappers\\BookMapper.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Mappers\\BookMapper.cs",
+              "RelativeToolTip": "Mappers\\BookMapper.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:46:34.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "OLService.cs",
               "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Service\\OLService.cs",
               "RelativeDocumentMoniker": "Service\\OLService.cs",
               "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Service\\OLService.cs",
               "RelativeToolTip": "Service\\OLService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T21:56:54.312Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PortfolioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Repositorys\\PortfolioRepository.cs",
-              "RelativeDocumentMoniker": "Repositorys\\PortfolioRepository.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Repositorys\\PortfolioRepository.cs",
-              "RelativeToolTip": "Repositorys\\PortfolioRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAA4AAAA",
+              "DocumentIndex": 5,
+              "Title": "OLAuthor.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Book\\OLAuthor.cs",
+              "RelativeDocumentMoniker": "Dtos\\Book\\OLAuthor.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Book\\OLAuthor.cs",
+              "RelativeToolTip": "Dtos\\Book\\OLAuthor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T11:10:29.402Z",
+              "WhenOpened": "2025-01-29T11:24:34.703Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "PortfolioController.cs",
               "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Controllers\\PortfolioController.cs",
               "RelativeDocumentMoniker": "Controllers\\PortfolioController.cs",
               "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Controllers\\PortfolioController.cs",
               "RelativeToolTip": "Controllers\\PortfolioController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAA1wCgAAAAlAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwDsAAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T11:06:43.717Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
+              "Title": "PortfolioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Repositorys\\PortfolioRepository.cs",
+              "RelativeDocumentMoniker": "Repositorys\\PortfolioRepository.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Repositorys\\PortfolioRepository.cs",
+              "RelativeToolTip": "Repositorys\\PortfolioRepository.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwAsAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T11:10:29.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Controllers\\BookController.cs",
+              "RelativeToolTip": "Controllers\\BookController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAowAkAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:39:25.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAwwBcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:39:14.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BookRepository.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Repositorys\\BookRepository.cs",
+              "RelativeDocumentMoniker": "Repositorys\\BookRepository.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Repositorys\\BookRepository.cs",
+              "RelativeToolTip": "Repositorys\\BookRepository.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAIwDIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:49:31.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "IBookRepository.cs",
               "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Interfaces\\IBookRepository.cs",
               "RelativeDocumentMoniker": "Interfaces\\IBookRepository.cs",
@@ -182,33 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BookRepository.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Repositorys\\BookRepository.cs",
-              "RelativeDocumentMoniker": "Repositorys\\BookRepository.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Repositorys\\BookRepository.cs",
-              "RelativeToolTip": "Repositorys\\BookRepository.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAIwEIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:49:31.052Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AppUser.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\AppUser.cs",
-              "RelativeDocumentMoniker": "Models\\AppUser.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\AppUser.cs",
-              "RelativeToolTip": "Models\\AppUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:20:59.591Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "IPortfolioRepository.cs",
               "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Interfaces\\IPortfolioRepository.cs",
               "RelativeDocumentMoniker": "Interfaces\\IPortfolioRepository.cs",
@@ -221,144 +264,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "Models\\ErrorViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T11:06:08.734Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Portfolio.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\Portfolio.cs",
-              "RelativeDocumentMoniker": "Models\\Portfolio.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\Portfolio.cs",
-              "RelativeToolTip": "Models\\Portfolio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T13:33:39.941Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "dbo.AspNetRoles [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BookPortfolio_36647b7c_f825_4c9a_bfc3_ee711d069b81/True/SqlTable/dbo.AspNetRoles.sql",
-              "ToolTip": "dbo.AspNetRoles [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-01-28T10:54:08.26Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAowDoAAAASAAAA",
+              "Title": "CreateBookRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Book\\CreateBookRequestDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\Book\\CreateBookRequestDto.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Book\\CreateBookRequestDto.cs",
+              "RelativeToolTip": "Dtos\\Book\\CreateBookRequestDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T13:39:14.08Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T12:38:25.646Z"
+              "WhenOpened": "2024-12-09T11:41:10.133Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "BookController.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Controllers\\BookController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Controllers\\BookController.cs",
-              "RelativeToolTip": "Controllers\\BookController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowAkAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:39:25.55Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFQAAAAGAAAA",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAF4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:19:03.203Z"
+              "WhenOpened": "2024-12-09T11:19:03.203Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ITokenService.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Interfaces\\ITokenService.cs",
-              "RelativeDocumentMoniker": "Interfaces\\ITokenService.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Interfaces\\ITokenService.cs",
-              "RelativeToolTip": "Interfaces\\ITokenService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T13:36:40.97Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "RegisterDto.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Account\\RegisterDto.cs",
-              "RelativeDocumentMoniker": "Dtos\\Account\\RegisterDto.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Account\\RegisterDto.cs",
-              "RelativeToolTip": "Dtos\\Account\\RegisterDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T13:47:13.813Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "BookQueryHelper.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Helpers\\BookQueryHelper.cs",
-              "RelativeDocumentMoniker": "Helpers\\BookQueryHelper.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Helpers\\BookQueryHelper.cs",
-              "RelativeToolTip": "Helpers\\BookQueryHelper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T13:04:25.566Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 14,
               "Title": "BookDto.cs",
               "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Book\\BookDto.cs",
               "RelativeDocumentMoniker": "Dtos\\Book\\BookDto.cs",
               "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Book\\BookDto.cs",
               "RelativeToolTip": "Dtos\\Book\\BookDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAnAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T12:44:51.666Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "BookMapper.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Mappers\\BookMapper.cs",
-              "RelativeDocumentMoniker": "Mappers\\BookMapper.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Mappers\\BookMapper.cs",
-              "RelativeToolTip": "Mappers\\BookMapper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:46:34.318Z"
+              "WhenOpened": "2024-12-10T12:44:51.666Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -370,11 +311,105 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-09T11:30:07.222Z"
+              "WhenOpened": "2024-12-09T11:30:07.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\AppUser.cs",
+              "RelativeToolTip": "Models\\AppUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:20:59.591Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T11:06:08.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Portfolio.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\Portfolio.cs",
+              "RelativeDocumentMoniker": "Models\\Portfolio.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\Portfolio.cs",
+              "RelativeToolTip": "Models\\Portfolio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:33:39.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "dbo.AspNetRoles [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BookPortfolio_36647b7c_f825_4c9a_bfc3_ee711d069b81/True/SqlTable/dbo.AspNetRoles.sql",
+              "ToolTip": "dbo.AspNetRoles [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-28T10:54:08.26Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T12:38:25.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ITokenService.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Interfaces\\ITokenService.cs",
+              "RelativeDocumentMoniker": "Interfaces\\ITokenService.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Interfaces\\ITokenService.cs",
+              "RelativeToolTip": "Interfaces\\ITokenService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:36:40.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Account\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\Account\\RegisterDto.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Account\\RegisterDto.cs",
+              "RelativeToolTip": "Dtos\\Account\\RegisterDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:47:13.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "BookQueryHelper.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Helpers\\BookQueryHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\BookQueryHelper.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Helpers\\BookQueryHelper.cs",
+              "RelativeToolTip": "Helpers\\BookQueryHelper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:04:25.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Service\\TokenService.cs",
               "RelativeDocumentMoniker": "Service\\TokenService.cs",
@@ -386,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Account\\LoginDto.cs",
               "RelativeDocumentMoniker": "Dtos\\Account\\LoginDto.cs",
@@ -398,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "NewUserDto.cs",
               "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Account\\NewUserDto.cs",
               "RelativeDocumentMoniker": "Dtos\\Account\\NewUserDto.cs",
@@ -407,34 +442,35 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T13:44:53.686Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "CreateBookRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Book\\CreateBookRequestDto.cs",
-              "RelativeDocumentMoniker": "Dtos\\Book\\CreateBookRequestDto.cs",
-              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Book\\CreateBookRequestDto.cs",
-              "RelativeToolTip": "Dtos\\Book\\CreateBookRequestDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:41:10.133Z"
             }
           ]
         },
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 185,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
+              "Title": "OLBook.cs",
+              "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Book\\OLBook.cs",
+              "RelativeDocumentMoniker": "Dtos\\Book\\OLBook.cs",
+              "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Dtos\\Book\\OLBook.cs",
+              "RelativeToolTip": "Dtos\\Book\\OLBook.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAowBsAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T11:18:31.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\Book.cs",
               "RelativeDocumentMoniker": "Models\\Book.cs",
               "ToolTip": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\Models\\Book.cs",
               "RelativeToolTip": "Models\\Book.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T11:31:44.078Z",
               "EditorCaption": ""

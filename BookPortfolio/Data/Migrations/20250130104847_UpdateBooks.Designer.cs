@@ -4,6 +4,7 @@ using BookPortfolio.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookPortfolio.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250130104847_UpdateBooks")]
+    partial class UpdateBooks
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,6 +109,7 @@ namespace BookPortfolio.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PublishDate")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -113,6 +117,7 @@ namespace BookPortfolio.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("coverIds")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("language")
@@ -168,13 +173,13 @@ namespace BookPortfolio.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "489371c6-aa4b-4057-8451-33e9593cefff",
+                            Id = "45b2b700-6c3e-40e8-a91d-2f954779c3b2",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "64679719-5f4a-4f11-aa76-6cc7d2ee399d",
+                            Id = "ee8f4e2e-fb40-4a42-a3bb-5fe0ce7226be",
                             Name = "User",
                             NormalizedName = "USER"
                         });

@@ -11,14 +11,10 @@ namespace BookPortfolio.Dtos.Book
         [MaxLength(64, ErrorMessage ="Title too long")]
         public string Title { get; set; } = string.Empty;
         [Required]
-        [Range(0, 2024)]
-        public int YearRelease { get; set; }
-        [Required]
-          
-        public int ISBN_10 { get; set; }
-        [Required]
-        [MaxLength(32, ErrorMessage = "Genre too long")]
-        public string genre { get; set; } = string.Empty;
+        [MaxLength(64, ErrorMessage ="Release date too long")]
+        public string PublishDate { get; set; }
+        public string ISBN_10 { get; set; }
+        public string ISBN_13 { get; set; }
         [Required]
         [MaxLength(10, ErrorMessage = "language too long")]
         public string language { get; set; } = string.Empty;

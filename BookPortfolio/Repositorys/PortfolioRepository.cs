@@ -9,7 +9,7 @@ namespace BookPortfolio.Repositorys
     {
         private readonly ApplicationDbContext _context;
 
-        private PortfolioRepository(ApplicationDbContext context)
+        public PortfolioRepository(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -37,10 +37,11 @@ namespace BookPortfolio.Repositorys
                 Id = book.BookId,
                 Author = book.Book.Author,
                 Title = book.Book.Title,
-                YearRelease = book.Book.YearRelease,
+                PublishDate = book.Book.PublishDate,
                 ISBN_10 = book.Book.ISBN_10,
-                genre = book.Book.genre,
+                ISBN_13 = book.Book.ISBN_13,
                 language = book.Book.language,
+                coverIds = book.Book.coverIds,
             }).ToListAsync();
         }
     }

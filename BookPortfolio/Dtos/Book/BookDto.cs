@@ -6,9 +6,9 @@
         //For the moment just get the first author? 
         public string Author { get; set; } = string.Empty;
         public string Title { get; set; } = string.Empty;
-        public int YearRelease { get; set; }
-        public int ISBN_10 { get; set; }
-        public string genre { get; set; } = string.Empty;
+        public string PublishDate { get; set; }
+        public string? ISBN_10 { get; set; }
+        public string? ISBN_13 { get; set; }
         public string language { get; set; } = string.Empty;
 
     }

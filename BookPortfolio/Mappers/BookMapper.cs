@@ -5,31 +5,48 @@ namespace BookPortfolio.Mappers
 {
     public static class BookMapper
     {
-        public static Book ToBookFromCreateDto (this CreateBookRequestDto bookDto)
+        public static Book ToBookFromCreateDto(this CreateBookRequestDto bookDto)
         {
             return new Book
             {
                 Title = bookDto.Title,
                 Author = bookDto.Author,
-                YearRelease = bookDto.YearRelease,
+                PublishDate = bookDto.PublishDate,
                 ISBN_10 = bookDto.ISBN_10,
-                genre = bookDto.genre,
+                ISBN_13 = bookDto.ISBN_13,
                 language = bookDto.language,
             };
         }
 
-       public static BookDto ToBookDto(this Book bookModel)
+        public static BookDto ToBookDto(this Book bookModel)
         {
             return new BookDto
             {
                 Id = bookModel.Id,
                 Title = bookModel.Title,
                 Author = bookModel.Author,
-                YearRelease = bookModel.YearRelease,
+                PublishDate = bookModel.PublishDate,
                 ISBN_10 = bookModel.ISBN_10,
-                genre = bookModel.genre,
+                ISBN_13 = bookModel.ISBN_13,
                 language = bookModel.language,
             };
+        }
+
+        public static Book ToBookFromOL(this OLBook olBookModel, OLAuthor olAuthorModel)
+        {
+
+            return new Book
+            {
+                Author = olAuthorModel.name,
+                Title = olBookModel.title,
+                PublishDate = olBookModel.publish_date,
+                ISBN_10 = olBookModel.isbn_10?[0],
+                ISBN_13 = olBookModel.isbn_13?[0],
+                language = "en",
+                coverIds = olBookModel.covers,
+            };
+
+
         }
 
     }

@@ -103,5 +103,47 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookPortfolio.Controllers.PortfolioController",
+    "Method": "GetUserPortfolio",
+    "RelativePath": "Portfolio",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookPortfolio.Controllers.PortfolioController",
+    "Method": "AddPortfolio",
+    "RelativePath": "Portfolio",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ISBN",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookPortfolio.Controllers.PortfolioController",
+    "Method": "DeletePortfolio",
+    "RelativePath": "Portfolio",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ISBN_10",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
