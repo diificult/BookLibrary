@@ -123,9 +123,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "ISBN",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "createPortfolioDto",
+        "Type": "BookPortfolio.Dtos.Portfolios.CreatePortfolioDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -139,7 +139,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "ISBN_10",
+        "Name": "ISBN",
         "Type": "System.String",
         "IsRequired": false
       }

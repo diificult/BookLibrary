@@ -1,5 +1,7 @@
-﻿using BookPortfolio.Extensions;
+﻿using BookPortfolio.Dtos.Portfolios;
+using BookPortfolio.Extensions;
 using BookPortfolio.Interfaces;
+using BookPortfolio.Mappers;
 using BookPortfolio.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -34,14 +36,14 @@ namespace BookPortfolio.Controllers
         }
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> AddPortfolio(string ISBN)
+        public async Task<IActionResult> AddPortfolio([FromBody] CreatePortfolioDto createPortfolioDto)
         {
             var username = User.GetUsername();
             var appUser = await _userManager.FindByNameAsync(username);
-            var book = await _bookRepository.GetByISBNAsync(ISBN);
+            var book = await _bookRepository.GetByISBNAsync(createPortfolioDto.ISBN);
             if (book == null)
             {
-                book = await _olService.FindBookByISBNSync(ISBN);
+                book = await _olService.FindBookByISBNSync(createPortfolioDto.ISBN);
                 if (book == null)
                 {
                     return BadRequest("Book does not exist");
@@ -58,13 +60,9 @@ namespace BookPortfolio.Controllers
                 return BadRequest("Book not found");
             }
             var userPortfolio = await _portfolioRepository.GetUserPortfolio(appUser);
-            if (userPortfolio.Any(b => b.ISBN_10 == ISBN || b.ISBN_13 == ISBN)) return BadRequest("Already in portfolio");
+            if (userPortfolio.Any(b => b.ISBN_10 == createPortfolioDto.ISBN || b.ISBN_13 == createPortfolioDto.ISBN)) return BadRequest("Already in portfolio");
 
-            var portfolioModel = new Portfolio
-            {
-                BookId = book.Id,
-                AppUserId = appUser.Id,
-            };
+            var portfolioModel = createPortfolioDto.ToPortfolioFromCreateDTO(appUser.Id, book.Id);
             await _portfolioRepository.CreateAsync(portfolioModel);
             if (portfolioModel == null) return StatusCode(500, "Couldn't create");
             else return Created();
@@ -72,16 +70,16 @@ namespace BookPortfolio.Controllers
 
         [HttpDelete]
         [Authorize]
-        public async Task<IActionResult> DeletePortfolio(string ISBN_10)
+        public async Task<IActionResult> DeletePortfolio(string ISBN)
         {
             var username = User.GetUsername();
             var appUser = await _userManager.FindByNameAsync(username); 
             var userPortfolio = await _portfolioRepository.GetUserPortfolio(appUser);
-            var filteredBook = userPortfolio.Where(b => b.ISBN_10.ToLower() == ISBN_10);
+            var filteredBook = userPortfolio.Where(b => b.ISBN_10?.ToLower() == ISBN || b.ISBN_13?.ToLower() == ISBN).ToList();
 
             if (filteredBook.Count() == 1)
             {
-                await _portfolioRepository.DeletePortfolioISBN(appUser, ISBN_10);
+                await _portfolioRepository.DeletePortfolioISBN(appUser, ISBN);
             }
             else return BadRequest("Book not in portfolio");
             return Ok();

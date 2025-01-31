@@ -21,9 +21,9 @@ namespace BookPortfolio.Repositorys
             return portfolio;
         }
 
-        public async Task<Portfolio> DeletePortfolioISBN(AppUser appUser, string ISBN_10)
+        public async Task<Portfolio> DeletePortfolioISBN(AppUser appUser, string ISBN)
         {
-            var portfolioModel = await _context.portfolios.FirstOrDefaultAsync(u => u.AppUserId == appUser.Id && u.Book.ISBN_10.ToLower() == ISBN_10.ToLower());
+            var portfolioModel = await _context.portfolios.FirstOrDefaultAsync(u => u.AppUserId == appUser.Id && (u.Book.ISBN_10.ToLower() == ISBN.ToLower() || u.Book.ISBN_13.ToLower() == ISBN.ToLower()));
             if (portfolioModel != null) { return null; }
             _context.portfolios.Remove(portfolioModel); 
             await _context.SaveChangesAsync();
