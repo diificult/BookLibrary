@@ -21,11 +21,13 @@ namespace BookPortfolio.Repositorys
             return portfolio;
         }
 
-        public async Task<Portfolio> DeletePortfolioISBN(AppUser appUser, string ISBN)
+        public async Task<Portfolio?> DeletePortfolioISBN(AppUser appUser, Book book)
         {
-            var portfolioModel = await _context.portfolios.FirstOrDefaultAsync(u => u.AppUserId == appUser.Id && (u.Book.ISBN_10.ToLower() == ISBN.ToLower() || u.Book.ISBN_13.ToLower() == ISBN.ToLower()));
+            var portfolioModel = await _context.portfolios.FirstOrDefaultAsync(u => u.AppUserId == appUser.Id 
+                && (u.Book.ISBN_10.ToLower() == book.ISBN_10.ToLower() 
+                || u.Book.ISBN_13.ToLower() == book.ISBN_13.ToLower()));
             if (portfolioModel != null) { return null; }
-            _context.portfolios.Remove(portfolioModel); 
+            _context.portfolios.Remove(portfolioModel);
             await _context.SaveChangesAsync();
             return portfolioModel;
         }
@@ -43,6 +45,17 @@ namespace BookPortfolio.Repositorys
                 language = book.Book.language,
                 coverIds = book.Book.coverIds,
             }).ToListAsync();
+        }
+
+        public async Task<Portfolio?> UpdateStateAsync(AppUser appUser, int bookId, string newState)
+        {
+            var existingPortfolio = await _context.portfolios.FirstOrDefaultAsync(x => x.AppUserId == appUser.Id && x.BookId == bookId);
+            if (existingPortfolio == null) return null;
+
+            existingPortfolio.BookState = newState;
+
+            await _context.SaveChangesAsync();
+            return existingPortfolio;
         }
     }
 }

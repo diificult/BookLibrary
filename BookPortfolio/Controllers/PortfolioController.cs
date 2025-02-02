@@ -68,6 +68,8 @@ namespace BookPortfolio.Controllers
             else return Created();
         }
 
+        //TODO: Fix
+        // Finds item but doesnt delete, issue in repo
         [HttpDelete]
         [Authorize]
         public async Task<IActionResult> DeletePortfolio(string ISBN)
@@ -79,12 +81,29 @@ namespace BookPortfolio.Controllers
 
             if (filteredBook.Count() == 1)
             {
-                await _portfolioRepository.DeletePortfolioISBN(appUser, ISBN);
+                await _portfolioRepository.DeletePortfolioISBN(appUser, filteredBook[0]);
             }
             else return BadRequest("Book not in portfolio");
             return Ok();
 
             
+        }
+
+        [HttpPut]
+        [Authorize]
+        public async Task<IActionResult> UpdateState(string ISBN, string NewState)
+        {
+            var username = User.GetUsername();
+            var appUser = await _userManager.FindByNameAsync(username);
+            var userPortoflio = await _portfolioRepository.GetUserPortfolio(appUser);
+            var filteredBook = userPortoflio.Where(b => b.ISBN_10?.ToLower() == ISBN || b.ISBN_13?.ToLower() == ISBN).ToList();
+
+            if (filteredBook.Count() == 1)
+            {
+                await _portfolioRepository.UpdateStateAsync(appUser, filteredBook[0].Id, NewState);
+            }
+            else return BadRequest("Book not in portfolio");
+            return Ok();
         }
     }
 }

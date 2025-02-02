@@ -145,5 +145,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookPortfolio.Controllers.PortfolioController",
+    "Method": "UpdateState",
+    "RelativePath": "Portfolio",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ISBN",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NewState",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

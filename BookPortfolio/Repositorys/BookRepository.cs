@@ -57,9 +57,9 @@ namespace BookPortfolio.Repositorys
             return await books.Skip(skipNumber).Take(query.PageNumber).ToListAsync();
         }
 
-        public async Task<Book?> GetByISBNAsync(string ISBN_10)
+        public async Task<Book?> GetByISBNAsync(string ISBN)
         {
-            return await _context.books.FirstOrDefaultAsync(b => b.ISBN_10 == ISBN_10);
+            return await _context.books.FirstOrDefaultAsync(b => b.ISBN_10 == ISBN || b.ISBN_13 == ISBN);
         }
     }
 }
