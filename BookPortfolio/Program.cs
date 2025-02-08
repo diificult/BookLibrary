@@ -12,6 +12,8 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(option =>
@@ -60,7 +62,8 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
     options.Password.RequireNonAlphanumeric = true;
     options.Password.RequiredLength = 12;
 })
-.AddEntityFrameworkStores<ApplicationDbContext>();
+.AddEntityFrameworkStores<ApplicationDbContext>()
+.AddDefaultTokenProviders();
 
 builder.Services.AddAuthentication(options =>
 {
@@ -83,6 +86,12 @@ builder.Services.AddAuthentication(options =>
             System.Text.Encoding.UTF8.GetBytes(builder.Configuration["JWT:SigningKey"])
         ),
     };
+});
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Acount/Login";
+    options.AccessDeniedPath = "/Account/AccessDenied";
 });
 
 builder.Services.AddScoped<IBookRepository, BookRepository>();
@@ -113,8 +122,12 @@ app.UseCors(x => x
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseRouting();
+app.UseStaticFiles();
 
 
 app.MapControllers();
+app.MapDefaultControllerRoute();
+app.MapRazorPages();
 
 app.Run();

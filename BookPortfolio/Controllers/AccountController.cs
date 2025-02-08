@@ -3,15 +3,11 @@ using BookPortfolio.Interfaces;
 using BookPortfolio.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace BookPortfolio.Controllers
 {
-    [Route("account")]
-    [ApiController]
-    public class AccountController : ControllerBase
+    public class AccountController : Controller
     {
-
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
         private readonly SignInManager<AppUser> _signInManager;
@@ -22,72 +18,48 @@ namespace BookPortfolio.Controllers
             _tokenService = tokenService;
             _signInManager = signInManager;
         }
-
-        [HttpPost("login")]
+        public IActionResult Login() => View();
+        [HttpPost]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return View(loginDto);
             }
-
-            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == loginDto.Username.ToLower());
-            if (user == null) { return Unauthorized("Invalid Username"); }
-            var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
-            if (!result.Succeeded)
+            var result = await _signInManager.PasswordSignInAsync(loginDto.Username, loginDto.Password, false, false);
+            if (result.Succeeded)
             {
-                return Unauthorized("Username not found and/or password is not correct");
+                return RedirectToAction("Index", "Portfolio");
             }
-            return Ok(new NewUserDto
-            {
-                UserName = user.UserName,
-                Email = user.Email,
-                Token = _tokenService.CreateToken(user),
-            });
+            ModelState.AddModelError("", "Invalid Login Attempt");
+            return View(loginDto);
         }
-
-        [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterDto registerDto)
+        public IActionResult Register() => View();
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterDto registerDto)
         {
-            try
+            if (!ModelState.IsValid) { return View(registerDto); }
+            var AppUser = new AppUser
             {
-                if (!ModelState.IsValid) return BadRequest(ModelState);
-                var AppUser = new AppUser
-                {
-                    UserName = registerDto.Username,
-                    Email = registerDto.EmailAddress,
-                };
-
-                var createNewUser = await _userManager.CreateAsync(AppUser, registerDto.Password);
-                if (createNewUser.Succeeded)
-                {
-                    var roleResult = await _userManager.AddToRoleAsync(AppUser, "User");
-                    if (roleResult.Succeeded)
-                    {
-                        return Ok(
-                            new NewUserDto
-                            {
-                                UserName = AppUser.UserName,
-                                Email = AppUser.Email,
-                                Token = _tokenService.CreateToken(AppUser)
-                            });
-
-                    }
-                    else
-                    {
-                        return StatusCode(500, roleResult.Errors);
-
-                    }
-                }
-                else
-                {
-                    return StatusCode(500, createNewUser.Errors);
-                }
-            }
-            catch (Exception ex)
+                UserName = registerDto.Username,
+                Email = registerDto.EmailAddress,
+            };
+            var createNewUser = await _userManager.CreateAsync(AppUser);
+            if (createNewUser.Succeeded)
             {
-                return StatusCode(500, ex);
+                var roleResult = await _userManager.AddToRoleAsync(AppUser, "User");
+                if (roleResult.Succeeded) { 
+                    return RedirectToAction("Login");   
+                }
+                
             }
+            ModelState.AddModelError("", "Registation Failed");
+            return View(registerDto);
+        }
+        public async Task<IActionResult> Logout()
+        {
+               await _signInManager.SignOutAsync(); 
+            return RedirectToAction("Index");
         }
     }
 }

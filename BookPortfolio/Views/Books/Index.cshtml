@@ -1,0 +1,12 @@
+﻿@model List<Portfolio>
+
+<h2>@ViewData["Username"]'s Bookshelf</h2>
+<div class="shelf">
+	<h3>Currently Reading</h3>
+	<ul>
+		@foreach(var portfolio in Model.Where(b => b.BookState == "Reading")) 
+		{
+			<li>@portfolio.Book.Title by @portfolio.Book.Author</li>
+		}
+	</ul>
+</div>

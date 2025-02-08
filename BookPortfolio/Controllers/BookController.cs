@@ -1,21 +1,50 @@
 ﻿using BookPortfolio.Data;
 using BookPortfolio.Dtos.Book;
-using BookPortfolio.Interfaces;
 using BookPortfolio.Mappers;
+using BookPortfolio.Models;
+using BookPortfolio.Repositorys;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookPortfolio.Controllers
 {
-    [Route("book")]
-    [ApiController]
-    public class BookController : ControllerBase
+    public class BookController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly IBookRepository _bookRepository;
-        public BookController(ApplicationDbContext context, IBookRepository bookRepository)
+        private readonly UserManager<ApplicationDbContext> _userManager;
+        private readonly BookRepository _bookRepository;
+
+        public BookController(ApplicationDbContext context, UserManager<ApplicationDbContext> userManager)
         {
             _context = context;
-            _bookRepository = bookRepository;
+            _userManager = userManager;
+        }
+
+        [AllowAnonymous]
+        public IActionResult Index()
+        {
+            var books = _context.books.ToList();
+            return View(books);
+        }
+
+        // Post
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateBookRequestDto model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var bookModel = model.ToBookFromCreateDto();
+            await _bookRepository.CreateAsync(bookModel);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -23,41 +52,11 @@ namespace BookPortfolio.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return View(query);
             }
             var books = await _bookRepository.GetAllAsync(query);
             var bookDto = books.Select(b => b.ToBookDto()).ToList();
-            return Ok(bookDto);
+            return View(bookDto);
         }
-
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetById([FromRoute] int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            var book = await _bookRepository.GetByIdAsync(id);
-            if (book == null)
-            {
-                return NotFound();
-            }
-            return Ok(book.ToBookDto());
-        }
-
-
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateBookRequestDto bookRequestDto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            var bookModel = bookRequestDto.ToBookFromCreateDto();
-            await _bookRepository.CreateAsync(bookModel);
-            return CreatedAtAction(nameof(GetById), new { id = bookModel.Id }, bookModel.ToBookDto());
-
-        }
-
     }
 }

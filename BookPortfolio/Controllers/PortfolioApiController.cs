@@ -1,36 +1,30 @@
-﻿using BookPortfolio.Data;
-using BookPortfolio.Dtos.Portfolios;
+﻿using BookPortfolio.Dtos.Portfolios;
 using BookPortfolio.Extensions;
 using BookPortfolio.Interfaces;
 using BookPortfolio.Mappers;
 using BookPortfolio.Models;
-using BookPortfolio.Repositorys;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace BookPortfolio.Controllers
 {
-    public class PortfolioController : Controller
+    [Route("api/Portfolio")]
+    [ApiController]
+    public class PortfolioApiController : ControllerBase
     {
-
+        private readonly UserManager<AppUser> _userManager;
         private readonly IPortfolioRepository _portfolioRepository;
         private readonly IBookRepository _bookRepository;
-        private readonly UserManager<AppUser> _userManager;
-        private readonly IOLService _oLService;
-        public IActionResult Index()
+        private readonly IOLService _olService;
+        public PortfolioApiController(UserManager<AppUser> userManager, IPortfolioRepository portfolioRepository, IBookRepository bookRepository, IOLService oLService)
         {
-            return View();
-        }
-
-        public PortfolioController(IPortfolioRepository portfolioRepository, IBookRepository bookRepository ,UserManager<AppUser> userManager, IOLService oLService)
-        {
+            _userManager = userManager;
             _portfolioRepository = portfolioRepository;
             _bookRepository = bookRepository;
-            _userManager = userManager; 
-            _oLService = oLService; 
+            _olService = oLService;
         }
-
         [HttpGet]
         [Authorize]
         public async Task<IActionResult> GetUserPortfolio()
@@ -38,22 +32,21 @@ namespace BookPortfolio.Controllers
             var username = User.GetUsername();
             var appUser = await _userManager.FindByNameAsync(username);
             var userPortfolio = await _portfolioRepository.GetUserPortfolio(appUser);
-            return View(userPortfolio); 
+            return Ok(userPortfolio);
         }
-
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> AddPortfolio(CreatePortfolioDto createPortfolioDto)
+        public async Task<IActionResult> AddPortfolio([FromBody] CreatePortfolioDto createPortfolioDto)
         {
             var username = User.GetUsername();
             var appUser = await _userManager.FindByNameAsync(username);
             var book = await _bookRepository.GetByISBNAsync(createPortfolioDto.ISBN);
             if (book == null)
             {
-                book = await _oLService.FindBookByISBNSync(createPortfolioDto.ISBN);
+                book = await _olService.FindBookByISBNSync(createPortfolioDto.ISBN);
                 if (book == null)
                 {
-                    return View(createPortfolioDto);
+                    return BadRequest("Book does not exist");
 
                 }
                 else
@@ -64,15 +57,15 @@ namespace BookPortfolio.Controllers
             }
             if (book == null)
             {
-                return View(createPortfolioDto);
+                return BadRequest("Book not found");
             }
             var userPortfolio = await _portfolioRepository.GetUserPortfolio(appUser);
             if (userPortfolio.Any(b => b.ISBN_10 == createPortfolioDto.ISBN || b.ISBN_13 == createPortfolioDto.ISBN)) return BadRequest("Already in portfolio");
 
             var portfolioModel = createPortfolioDto.ToPortfolioFromCreateDTO(appUser.Id, book.Id);
             await _portfolioRepository.CreateAsync(portfolioModel);
-            if (portfolioModel == null) return View(createPortfolioDto);
-            else return RedirectToAction("Manage") ;
+            if (portfolioModel == null) return StatusCode(500, "Couldn't create");
+            else return Created();
         }
 
         [HttpDelete]
@@ -80,7 +73,7 @@ namespace BookPortfolio.Controllers
         public async Task<IActionResult> DeletePortfolio(string ISBN)
         {
             var username = User.GetUsername();
-            var appUser = await _userManager.FindByNameAsync(username);
+            var appUser = await _userManager.FindByNameAsync(username); 
             var userPortfolio = await _portfolioRepository.GetUserPortfolio(appUser);
             var filteredBook = userPortfolio.Where(b => b.ISBN_10?.ToLower() == ISBN || b.ISBN_13?.ToLower() == ISBN).ToList();
 
@@ -88,10 +81,27 @@ namespace BookPortfolio.Controllers
             {
                 await _portfolioRepository.DeletePortfolioISBN(appUser, filteredBook[0]);
             }
-            else return View(ISBN);
-            return View("Manage");
+            else return BadRequest("Book not in portfolio");
+            return Ok();
 
+            
+        }
 
+        [HttpPut]
+        [Authorize]
+        public async Task<IActionResult> UpdateState(string ISBN, string NewState)
+        {
+            var username = User.GetUsername();
+            var appUser = await _userManager.FindByNameAsync(username);
+            var userPortoflio = await _portfolioRepository.GetUserPortfolio(appUser);
+            var filteredBook = userPortoflio.Where(b => b.ISBN_10?.ToLower() == ISBN || b.ISBN_13?.ToLower() == ISBN).ToList();
+
+            if (filteredBook.Count() == 1)
+            {
+                await _portfolioRepository.UpdateStateAsync(appUser, filteredBook[0].Id, NewState);
+            }
+            else return BadRequest("Book not in portfolio");
+            return Ok();
         }
     }
 }

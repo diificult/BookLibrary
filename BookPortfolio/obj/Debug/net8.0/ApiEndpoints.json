@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "BookPortfolio.Controllers.AccountController",
+    "ContainingType": "BookPortfolio.Controllers.AccountApiController",
     "Method": "Login",
-    "RelativePath": "account/login",
+    "RelativePath": "api/account/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -16,9 +16,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BookPortfolio.Controllers.AccountController",
+    "ContainingType": "BookPortfolio.Controllers.AccountApiController",
     "Method": "Register",
-    "RelativePath": "account/register",
+    "RelativePath": "api/account/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -32,9 +32,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BookPortfolio.Controllers.BookController",
+    "ContainingType": "BookPortfolio.Controllers.BookApiController",
     "Method": "GetAll",
-    "RelativePath": "book",
+    "RelativePath": "api/book",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -73,9 +73,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BookPortfolio.Controllers.BookController",
+    "ContainingType": "BookPortfolio.Controllers.BookApiController",
     "Method": "Create",
-    "RelativePath": "book",
+    "RelativePath": "api/book",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -89,9 +89,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BookPortfolio.Controllers.BookController",
+    "ContainingType": "BookPortfolio.Controllers.BookApiController",
     "Method": "GetById",
-    "RelativePath": "book/{id}",
+    "RelativePath": "api/book/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -105,9 +105,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BookPortfolio.Controllers.PortfolioController",
+    "ContainingType": "BookPortfolio.Controllers.PortfolioApiController",
     "Method": "GetUserPortfolio",
-    "RelativePath": "Portfolio",
+    "RelativePath": "api/Portfolio",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -115,9 +115,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BookPortfolio.Controllers.PortfolioController",
+    "ContainingType": "BookPortfolio.Controllers.PortfolioApiController",
     "Method": "AddPortfolio",
-    "RelativePath": "Portfolio",
+    "RelativePath": "api/Portfolio",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -131,9 +131,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BookPortfolio.Controllers.PortfolioController",
+    "ContainingType": "BookPortfolio.Controllers.PortfolioApiController",
     "Method": "DeletePortfolio",
-    "RelativePath": "Portfolio",
+    "RelativePath": "api/Portfolio",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -147,9 +147,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BookPortfolio.Controllers.PortfolioController",
+    "ContainingType": "BookPortfolio.Controllers.PortfolioApiController",
     "Method": "UpdateState",
-    "RelativePath": "Portfolio",
+    "RelativePath": "api/Portfolio",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
