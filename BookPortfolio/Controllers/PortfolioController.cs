@@ -5,12 +5,14 @@ using BookPortfolio.Interfaces;
 using BookPortfolio.Mappers;
 using BookPortfolio.Models;
 using BookPortfolio.Repositorys;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookPortfolio.Controllers
 {
+     [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
     public class PortfolioController : Controller
     {
 
@@ -18,10 +20,30 @@ namespace BookPortfolio.Controllers
         private readonly IBookRepository _bookRepository;
         private readonly UserManager<AppUser> _userManager;
         private readonly IOLService _oLService;
-        public IActionResult Index()
+
+        public async Task<IActionResult> Index()
         {
-            return View();
+
+
+            var username = User.Identity.Name;
+            if (username == null)
+            {
+                Console.WriteLine(" User is NOT authenticated (from user.identity)!");
+                return RedirectToAction("Login", "Account");
+            }
+            var user = await _userManager.GetUserAsync(User);
+              if (user == null)
+            {
+                Console.WriteLine(" User is NOT authenticated (from UserManager)!");
+                return RedirectToAction("Login", "Account");
+            }
+
+            Console.WriteLine($" User is authenticated: {user.UserName}");
+
+            var userPortfolio = await _portfolioRepository.GetUserPortfolio(user);
+            return View(userPortfolio);
         }
+
 
         public PortfolioController(IPortfolioRepository portfolioRepository, IBookRepository bookRepository ,UserManager<AppUser> userManager, IOLService oLService)
         {

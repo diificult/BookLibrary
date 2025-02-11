@@ -157,4 +157,3 @@ C:\Users\OwenWork\Documents\Tutorials\ASPnet\BookLibrary\BookPortfolio\obj\Debug
 C:\Users\OwenWork\Documents\Tutorials\ASPnet\BookLibrary\BookPortfolio\bin\Debug\net8.0\BookPortfolio.staticwebassets.endpoints.json
 C:\Users\OwenWork\Documents\Tutorials\ASPnet\BookLibrary\BookPortfolio\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\OwenWork\Documents\Tutorials\ASPnet\BookLibrary\BookPortfolio\obj\Debug\net8.0\staticwebassets\msbuild.BookPortfolio.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\OwenWork\Documents\Tutorials\ASPnet\BookLibrary\BookPortfolio\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

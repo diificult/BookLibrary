@@ -1,6 +1,7 @@
 ﻿using BookPortfolio.Dtos.Account;
 using BookPortfolio.Interfaces;
 using BookPortfolio.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,18 +23,34 @@ namespace BookPortfolio.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
+
             if (!ModelState.IsValid)
             {
                 return View(loginDto);
             }
-            var result = await _signInManager.PasswordSignInAsync(loginDto.Username, loginDto.Password, false, false);
-            if (result.Succeeded)
+
+            var user = await _userManager.FindByNameAsync(loginDto.Username);
+            if (user == null)
             {
-                return RedirectToAction("Index", "Portfolio");
+                ModelState.AddModelError("", "Invalid login attempt.");
+                return View(loginDto);
             }
-            ModelState.AddModelError("", "Invalid Login Attempt");
-            return View(loginDto);
+
+            var passwordValid = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
+            if (!passwordValid.Succeeded)
+            {
+                ModelState.AddModelError("", "Invalid login attempt.");
+                return View(loginDto);
+            }
+
+            await _signInManager.SignInAsync(user, isPersistent: true, authenticationMethod: CookieAuthenticationDefaults.AuthenticationScheme);
+
+            Console.WriteLine($"User {user.UserName} logged in successfully!");
+
+            return RedirectToAction("Index", "Portfolio");
+
         }
+
         public IActionResult Register() => View();
         [HttpPost]
         public async Task<IActionResult> Register(RegisterDto registerDto)
@@ -48,17 +65,18 @@ namespace BookPortfolio.Controllers
             if (createNewUser.Succeeded)
             {
                 var roleResult = await _userManager.AddToRoleAsync(AppUser, "User");
-                if (roleResult.Succeeded) { 
-                    return RedirectToAction("Login");   
+                if (roleResult.Succeeded)
+                {
+                    return RedirectToAction("Login");
                 }
-                
+
             }
             ModelState.AddModelError("", "Registation Failed");
             return View(registerDto);
         }
         public async Task<IActionResult> Logout()
         {
-               await _signInManager.SignOutAsync(); 
+            await _signInManager.SignOutAsync();
             return RedirectToAction("Index");
         }
     }

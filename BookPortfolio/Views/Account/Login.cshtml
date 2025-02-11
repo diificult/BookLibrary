@@ -1,17 +1,17 @@
-﻿@{
-    ViewData["Title"] = "Login";
-}
+﻿@model BookPortfolio.Dtos.Account.LoginDto
 
-<h2>Login</h2>
+<form asp-action="Login" method="post">
+    <div class="form-group">
+        <label asp-for="Username"></label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
 
-<form asp-controller="Account" asp-action="Login" method="post">
-    <div>
-        <label>Email:</label>
-        <input type="email" name="email" required />
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
     </div>
-    <div>
-        <label>Password:</label>
-        <input type="password" name="password" required />
-    </div>
-    <button type="submit">Login</button>
+
+    <button type="submit" class="btn btn-primary">Login</button>
 </form>

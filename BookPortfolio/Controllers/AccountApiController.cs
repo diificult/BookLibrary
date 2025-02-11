@@ -33,7 +33,8 @@ namespace BookPortfolio.Controllers
 
             var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == loginDto.Username.ToLower());
             if (user == null) { return Unauthorized("Invalid Username"); }
-            var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
+            //var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
+            var result = await _signInManager.PasswordSignInAsync(loginDto.Username, loginDto.Password, true, false);
             if (!result.Succeeded)
             {
                 return Unauthorized("Username not found and/or password is not correct");
