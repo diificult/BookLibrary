@@ -46,6 +46,10 @@ namespace BookPortfolio.Repositorys
                 coverIds = book.Book.coverIds,
             }).ToListAsync();
         }
+        public async Task<List<Portfolio>> GetUserPortfolioList(AppUser user)
+        {
+            return await _context.portfolios.Where(u => u.AppUserId == user.Id).Include(p => p.Book).ToListAsync();
+        }
 
         public async Task<Portfolio?> UpdateStateAsync(AppUser appUser, int bookId, string newState)
         {

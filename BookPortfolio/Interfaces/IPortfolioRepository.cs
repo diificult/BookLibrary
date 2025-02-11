@@ -5,6 +5,7 @@ namespace BookPortfolio.Interfaces
     public interface IPortfolioRepository
     {
         Task<List<Book>> GetUserPortfolio(AppUser user);
+        Task<List<Portfolio>> GetUserPortfolioList(AppUser user);
         Task<Portfolio> CreateAsync(Portfolio portfolio);
         Task<Portfolio?> DeletePortfolioISBN(AppUser appUser, Book book);
 

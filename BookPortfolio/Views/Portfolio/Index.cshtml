@@ -2,20 +2,27 @@
 
 
 @{
-	ViewData["Title"] = "My Portfolio";
+    ViewData["Title"] = "My Portfolio";
 }
 
-<h2>@ViewData["Username"]'s Bookshelf</h2>
+<h2>@ViewData["Username"]'s Bookshelf</h2> 
+<button class="uk-button uk-button-default">Edit</button>
 
 <div class="shelf">
     @foreach (var item in Model.Where(b => b.BookState == "Reading"))
     {
-        <div class="book">
-            <strong>@item.Book.Title</strong> by @item.Book.Author
-            <br />
-            Rating: @item.Rating/5
-            <br />
-            Comment: @item.Comment
+
+        string imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}.jpg";
+
+        <div class="card" style="width: 18rem;">
+            <img src="@imgUrl" class="card-img-top" alt="Book Cover" />
+               <div class="card-body">
+                <strong>@item.Book.Title</strong> by @item.Book.Author
+                <br />
+                Rating: @item.Rating/5
+                 <br />
+                Comment: @item.Comment
+            </div>
         </div>
     }
 </div>

@@ -2,22 +2,21 @@
 @inject SignInManager<AppUser> SignInManager
 @inject UserManager<AppUser> UserManager
 
-@if (SignInManager.IsSignedIn(User))
-{
-    <p style="color: green;">✅ Logged in as @UserManager.GetUserName(User)</p>
-}
-else
-{
-    <p style="color: red;">❌ Not authenticated</p>
-}
-
-
-
 <ul class="navbar-nav">
-    @if (SignInManager.IsSignedIn(User))
+    <li class="nav-item">
+        <span class="nav-link"> Debug: IsSignedIn = @(SignInManager.IsSignedIn(User) ? "YES" : "NO")</span>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link"> Debug: User.Identity.IsAuthenticated = @(User.Identity.IsAuthenticated ? "YES" : "NO")</span>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link">Debug: Username = @UserManager.GetUserName(User)</span>
+    </li>
+
+    @if (User.Identity.IsAuthenticated)
     {
         <li class="nav-item">
-            <span class="nav-link">Hello, @UserManager.GetUserName(User)</span>
+            <span class="nav-link">Logged in as @UserManager.GetUserName(User)</span>
         </li>
         <li class="nav-item">
             <form asp-controller="Account" asp-action="Logout" method="post">

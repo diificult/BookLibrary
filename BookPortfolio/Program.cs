@@ -45,14 +45,27 @@ builder.Services.AddAuthentication(options =>
     options.DefaultSignOutScheme = CookieAuthenticationDefaults.AuthenticationScheme;
    
 
-}).AddCookie( options =>
+}).AddCookie();
+
+builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Account/Login";
     options.AccessDeniedPath = "/Account/AccessDenied";
     options.Cookie.HttpOnly = true;
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(60); // Session expires in 60 minutes
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;  //Forces cookies to be sent only over HTTPS
+    options.Cookie.SameSite = SameSiteMode.Lax;  // Allows cross-origin authentication if needed
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
     options.SlidingExpiration = true;
 });
+
+builder.Services.AddAntiforgery(options =>
+{
+    options.Cookie.Name = "X-CSRF-TOKEN";
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; 
+    options.Cookie.SameSite = SameSiteMode.None; 
+});
+
 
 builder.Services.AddAuthorization();
 
@@ -91,9 +104,16 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.Use(async (context, next) =>
+{
+    Console.WriteLine($"Before Authentication: User Authenticated? {context.User.Identity?.IsAuthenticated}");
+    await next.Invoke();
+    Console.WriteLine($"After Authentication: User Authenticated? {context.User.Identity?.IsAuthenticated}");
+});
 
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 app.MapDefaultControllerRoute();
