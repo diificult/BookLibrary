@@ -21,6 +21,8 @@ public class Notes
     public string value { get; set; }
 }
 
+
+
 public class OLBook
 {
     public List<string> publishers { get; set; }
@@ -33,7 +35,7 @@ public class OLBook
     public List<Author> authors { get; set; }
     public List<string> source_records { get; set; }
     public string title { get; set; }
-    public Notes? notes { get; set; }
+    public string? notes { get; set; }
     public int number_of_pages { get; set; }
     public List<string>? isbn_13 { get; set; }
     public List<string>? isbn_10 { get; set; }

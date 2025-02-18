@@ -43,7 +43,7 @@ builder.Services.AddAuthentication(options =>
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     options.DefaultSignOutScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-   
+
 
 }).AddCookie();
 
@@ -62,8 +62,8 @@ builder.Services.AddAntiforgery(options =>
 {
     options.Cookie.Name = "X-CSRF-TOKEN";
     options.Cookie.HttpOnly = true;
-    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; 
-    options.Cookie.SameSite = SameSiteMode.None; 
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.SameSite = SameSiteMode.None;
 });
 
 
@@ -114,6 +114,17 @@ app.Use(async (context, next) =>
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.MapControllerRoute(
+    name: "Portfolio",
+    pattern: "Portfolio",
+    defaults: new { Controller = "Portfolio", action = "Index" }
+);
+
+app.MapControllerRoute(
+    name: "UserPortfolio",
+    pattern: "{username}",
+    defaults: new { Controller = "Portfolio", action = "UserPortfolio" }
+);
 
 app.MapControllers();
 app.MapDefaultControllerRoute();

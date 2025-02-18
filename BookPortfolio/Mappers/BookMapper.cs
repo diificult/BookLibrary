@@ -48,6 +48,22 @@ namespace BookPortfolio.Mappers
 
 
         }
+        public static Book ToBookFromOL(this OLBook olBookModel)
+        {
+
+            return new Book
+            {
+                Author = "n/a",
+                Title = olBookModel.title,
+                PublishDate = olBookModel.publish_date,
+                ISBN_10 = olBookModel.isbn_10?[0],
+                ISBN_13 = olBookModel.isbn_13?[0],
+                language = "en",
+                coverIds = olBookModel.covers,
+            };
+
+
+        }
 
     }
 }

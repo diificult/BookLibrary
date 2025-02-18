@@ -6,7 +6,7 @@ public class OLAuthor
     public Remote_Ids remote_ids { get; set; }
     public string personal_name { get; set; }
     public string birth_date { get; set; }
-    public Bio bio { get; set; }
+    public string? bio { get; set; }
     public string key { get; set; }
     public string[] source_records { get; set; }
     public int[] photos { get; set; }

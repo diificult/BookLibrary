@@ -1,38 +1,24 @@
-﻿@model IEnumerable<BookPortfolio.Models.Portfolio>
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<BookPortfolio.Models.Portfolio>
+@inject UserManager<AppUser> UserManager
 
+<h2>@Model.FirstOrDefault()?.AppUser.UserName's Portfolio</h2>
 
-@{
-    ViewData["Title"] = ViewData["Username"] + "'s Bookshelf";
+@if (Model.FirstOrDefault()?.AppUser.UserName == UserManager.GetUserName(User)) {
+    <a class="btn btn-outline-secondary" asp-area="" asp-controller="Portfolio" asp-action="Index">Return to edit view</a>
 }
 
-<div>
-	<h2>@ViewData["Username"]'s Bookshelf </h2>
-</div>
-<div class="">
-	<a asp-area="" asp-action="AddPortfolio" asp-controller="Portfolio" class=" btn btn-primary uk-button uk-button-primary">
-		Add Book
-	</a>
-	<a href="@ViewData["Username"]" class=" btn btn-outline-secondary">View As Public</a>
-
-</div>
-
-
-
-
-
-
-
-	<h3>Currently Reading</h3>
+<h3>Currently Reading</h3>
 <div class="shelf d-flex p-4 m-2">
     @foreach (var item in Model.Where(b => b.BookState == "Reading"))
     {
 
-        
+
         string imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
 
         <div class="card" style="width: 12rem;">
             <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
-               <div class="card-body">
+            <div class="card-body">
                 <strong>@item.Book.Title</strong> by @item.Book.Author
                 <br />
                 @if (item.Rating != null)
@@ -55,7 +41,7 @@
     }
 </div>
 
-	<h3>Read</h3>
+<h3>Read</h3>
 <div class="shelf d-flex p-4 m-2">
     @foreach (var item in Model.Where(b => b.BookState == "Read"))
     {
@@ -87,7 +73,7 @@
     }
 </div>
 
-	<h3>To Read</h3>
+<h3>To Read</h3>
 <div class="shelf d-flex p-4 m-2">
     @foreach (var item in Model.Where(b => b.BookState == "To Read"))
     {
@@ -98,9 +84,10 @@
             <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
             <div class="card-body">
                 <strong>@item.Book.Title</strong> by @item.Book.Author
-                
+
                 <br />
-                @if (item.Rating != null) {
+                @if (item.Rating != null)
+                {
                     <div>
                         Rating: @item.Rating/5
                     </div>
@@ -120,7 +107,7 @@
 </div>
 
 <div class="shelf d-flex p-4 m-2">
-	<h3>Want To Read</h3>
+    <h3>Want To Read</h3>
     @foreach (var item in Model.Where(b => b.BookState == "Want To Read"))
     {
 

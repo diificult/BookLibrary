@@ -44,12 +44,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Portfolio/AddBook.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydGZvbGlvXEFkZEJvb2suY3NodG1s
+[C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Portfolio/AddPortfolio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydGZvbGlvXEFkZFBvcnRmb2xpby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Portfolio/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydGZvbGlvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Portfolio/UserPortfolio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydGZvbGlvXFVzZXJQb3J0Zm9saW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Shared/Error.cshtml]

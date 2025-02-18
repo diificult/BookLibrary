@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.InteropServices;
 
 namespace BookPortfolio.Models
 {
@@ -15,6 +16,8 @@ namespace BookPortfolio.Models
         public string language { get; set; } = string.Empty;
 
         public int[]? coverIds { get; set; } 
+
+        public DateTime LastUpdated { get; set; } = DateTime.Now;
 
         public List<Portfolio> Portfolios { get; set; } = new List<Portfolio>();
 
