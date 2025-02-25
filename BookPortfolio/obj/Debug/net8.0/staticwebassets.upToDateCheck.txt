@@ -5,6 +5,7 @@ wwwroot\cache\12968901-M.jpg
 wwwroot\cache\14139696-M.jpg
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\img\defbookcover-min.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

@@ -8,6 +8,7 @@ namespace BookPortfolio.Interfaces
         Task<List<Portfolio>> GetUserPortfolioList(AppUser user);
         Task<Portfolio> CreateAsync(Portfolio portfolio);
         Task<Portfolio?> DeletePortfolioISBN(AppUser appUser, Book book);
+        Task<bool> CheckIfPortfolioPublic(AppUser appUser);
 
         Task<Portfolio?> UpdateStateAsync(AppUser appUser, int bookId, string newState);
     }

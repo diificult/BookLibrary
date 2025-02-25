@@ -49,7 +49,7 @@ namespace BookPortfolio.Controllers
             ViewData["Username"] = User.Identity.Name;
 
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            var userPortfolio = await _portfolioRepository.GetUserPortfolioList(user);
+            var userPortfolio = await _portfolioRepository.GetUserPortfolioList(user); 
 
             return View(userPortfolio);
         }
@@ -99,6 +99,11 @@ namespace BookPortfolio.Controllers
             var appUser = await _userManager.FindByNameAsync(username);
             if (appUser != null)
             {
+                var checkIfPublic = await _portfolioRepository.CheckIfPortfolioPublic(appUser);
+                if (!checkIfPublic)
+                {
+                    return StatusCode(403, "User portfolio is private");
+                }
                 var userPortfolio = await _portfolioRepository.GetUserPortfolioList(appUser);   
                 return View("UserPortfolio", userPortfolio);
 
@@ -109,5 +114,20 @@ namespace BookPortfolio.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("Portfolio/UpdateState")]
+        public async Task<IActionResult> UpdateState(int bookId, string newState)
+        {
+            Console.WriteLine($"Received update request: bookId={bookId}, newState={newState}");
+            if (!User.Identity.IsAuthenticated)
+            {
+                Console.WriteLine(" User is NOT authenticated inside PortfolioController!");
+                return RedirectToAction("Login", "Account");
+            }
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var updatedPortfolio = await _portfolioRepository.UpdateStateAsync(user, bookId, newState);
+            if (updatedPortfolio == null) return StatusCode(500, "Couldn't update");
+            else return RedirectToAction("Index", "Portfolio");
+        }
     }
 }

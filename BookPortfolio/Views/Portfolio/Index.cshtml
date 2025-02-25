@@ -3,16 +3,17 @@
 
 @{
     ViewData["Title"] = ViewData["Username"] + "'s Bookshelf";
+
 }
 
 <div>
-	<h2>@ViewData["Username"]'s Bookshelf </h2>
+    <h2>@ViewData["Username"]'s Bookshelf </h2>
 </div>
 <div class="">
-	<a asp-area="" asp-action="AddPortfolio" asp-controller="Portfolio" class=" btn btn-primary uk-button uk-button-primary">
-		Add Book
-	</a>
-	<a href="@ViewData["Username"]" class=" btn btn-outline-secondary">View As Public</a>
+    <a asp-area="" asp-action="AddPortfolio" asp-controller="Portfolio" class=" btn btn-primary uk-button uk-button-primary">
+        Add Book
+    </a>
+    <a href="@ViewData["Username"]" class=" btn btn-outline-secondary">View As Public</a>
 
 </div>
 
@@ -22,25 +23,36 @@
 
 
 
-	<h3>Currently Reading</h3>
+<h3>Currently Reading</h3>
 <div class="shelf d-flex p-4 m-2">
     @foreach (var item in Model.Where(b => b.BookState == "Reading"))
     {
 
-        
-        string imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
 
-        <div class="card" style="width: 12rem;">
-            <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
-               <div class="card-body">
+
+		<div class="card" style="width: 12rem;">
+			@{
+                string imgUrl = "";
+			    if (item.Book.coverIds == null)
+			    {
+				    <img src="img/defbookcover-min.jpg" />
+			    }
+			    else
+			    {
+				    imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
+                    <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
+
+			    }
+            }
+            <div class="card-body">
                 <strong>@item.Book.Title</strong> by @item.Book.Author
+
                 <br />
                 @if (item.Rating != null)
                 {
                     <div>
                         Rating: @item.Rating/5
                     </div>
-
                 }
                 <br />
                 @if (item.Comment != null)
@@ -48,8 +60,21 @@
                     <div>
                         Comment: @item.Comment
                     </div>
-
                 }
+
+                <!-- Dropdown to update book state -->
+                <br />
+                <label for="bookState-@item.Book.Id">Update State:</label>
+                @{
+                    var states = new[] { "Reading", "Read", "To Read", "Want to Read" };
+                }
+                <select class="form-control bookStateDropdown" data-book-id="@item.Book.Id">
+                    @foreach (var state in states)
+                    {
+                        var isSelected = item.BookState == state ? "selected" : "";
+                        <option value="@state" isSelected>@state</option>
+                    }
+                </select>
             </div>
         </div>
     }
@@ -59,20 +84,19 @@
 <div class="shelf d-flex p-4 m-2">
     @foreach (var item in Model.Where(b => b.BookState == "Read"))
     {
-
         string imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
 
         <div class="card" style="width: 12rem;">
             <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
             <div class="card-body">
                 <strong>@item.Book.Title</strong> by @item.Book.Author
+
                 <br />
                 @if (item.Rating != null)
                 {
                     <div>
                         Rating: @item.Rating/5
                     </div>
-
                 }
                 <br />
                 @if (item.Comment != null)
@@ -80,63 +104,43 @@
                     <div>
                         Comment: @item.Comment
                     </div>
-
                 }
+
+                <!-- Dropdown to update book state -->
+                <br />
+                <label for="bookState-@item.Book.Id">Update State:</label>
+                @{
+                    var states = new[] { "Reading", "Read", "To Read", "Want to Read" };
+                }
+                <select class="form-control bookStateDropdown" data-book-id="@item.Book.Id">
+                    @foreach (var state in states)
+                    {
+                        var isSelected = item.BookState == state ? "selected" : "";
+                        <option value="@state" isSelected>@state</option>
+                    }
+                </select>
             </div>
         </div>
     }
 </div>
 
-	<h3>To Read</h3>
+<h3>To Read</h3>
 <div class="shelf d-flex p-4 m-2">
     @foreach (var item in Model.Where(b => b.BookState == "To Read"))
     {
-
         string imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
 
         <div class="card" style="width: 12rem;">
             <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
             <div class="card-body">
                 <strong>@item.Book.Title</strong> by @item.Book.Author
-                
-                <br />
-                @if (item.Rating != null) {
-                    <div>
-                        Rating: @item.Rating/5
-                    </div>
 
-                }
-                <br />
-                @if (item.Comment != null)
-                {
-                    <div>
-                        Comment: @item.Comment
-                    </div>
-
-                }
-            </div>
-        </div>
-    }
-</div>
-
-<div class="shelf d-flex p-4 m-2">
-	<h3>Want To Read</h3>
-    @foreach (var item in Model.Where(b => b.BookState == "Want To Read"))
-    {
-
-        string imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
-
-        <div class="card" style="width: 18rem;">
-            <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
-            <div class="card-body">
-                <strong>@item.Book.Title</strong> by @item.Book.Author
                 <br />
                 @if (item.Rating != null)
                 {
                     <div>
                         Rating: @item.Rating/5
                     </div>
-
                 }
                 <br />
                 @if (item.Comment != null)
@@ -144,9 +148,105 @@
                     <div>
                         Comment: @item.Comment
                     </div>
-
                 }
+
+                <!-- Dropdown to update book state -->
+                <br />
+                <label for="bookState-@item.Book.Id">Update State:</label>
+                @{
+                    var states = new[] { "Reading", "Read", "To Read", "Want to Read" };
+                }
+                <select class="form-control bookStateDropdown" data-book-id="@item.Book.Id">
+                    @foreach (var state in states)
+                    {
+                        var isSelected = item.BookState == state ? "selected" : "";
+                        <option value="@state" isSelected>@state</option>
+                    }
+                </select>
             </div>
         </div>
     }
 </div>
+
+
+
+
+
+	<h3>Want To Read</h3>
+    <div class="shelf d-flex p-4 m-2">
+        @foreach (var item in Model.Where(b => b.BookState == "Want To Read"))
+        {
+            string imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
+
+            <div class="card" style="width: 12rem;">
+                <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
+                <div class="card-body">
+                    <strong>@item.Book.Title</strong> by @item.Book.Author
+
+                    <br />
+                    @if (item.Rating != null)
+                    {
+                        <div>
+                            Rating: @item.Rating/5
+                        </div>
+                    }
+                    <br />
+                    @if (item.Comment != null)
+                    {
+                        <div>
+                            Comment: @item.Comment
+                        </div>
+                    }
+
+                    <!-- Dropdown to update book state -->
+                    <br />
+                    <label for="bookState-@item.Book.Id">Update State:</label>
+                    @{
+                        var states = new[] { "Reading", "Read", "To Read", "Want to Read" };
+                    }
+                    <select class="form-control bookStateDropdown" data-book-id="@item.Book.Id">
+                        @foreach (var state in states)
+                        {
+                            var isSelected = item.BookState == state ? "selected" : "";
+                            <option value="@state" isSelected>@state</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        }
+    </div>
+
+
+<!-- //TODO UPDATE TO BETTER CODE AS I THINK IT COULD BE BETTER -->
+<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		document.querySelectorAll(".bookStateDropdown").forEach(dropdown => {
+			dropdown.addEventListener("change", function() {
+				let bookId = this.getAttribute("data-book-id");
+				let newState = this.value;
+				let token = document.querySelector("input[name='__RequestVerificationToken']")?.value;
+
+				fetch(`/Portfolio/UpdateState`, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded",
+						"RequestVerificationToken": token
+					},
+					body: new URLSearchParams({
+						bookId: bookId,
+						newState: newState
+					})
+				})
+				.then(response => {
+					if (response.redirected) {
+						window.location.href = response.url;
+					} else if (!response.ok) {
+						throw new Error("Failed to update book state.");
+					}
+				})
+				.catch(error => console.error("Error:", error));
+			});
+		});
+	});
+
+</script>

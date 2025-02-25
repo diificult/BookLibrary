@@ -14,6 +14,14 @@ namespace BookPortfolio.Repositorys
             _context = context;
         }
 
+        public async Task<bool> CheckIfPortfolioPublic(AppUser appUser)
+        {
+            var Portfolios = await _context.Users.Include(u => u.Portfolios).FirstOrDefaultAsync(u => u.Id == appUser.Id);
+            if (Portfolios == null) return false;
+            return Portfolios.isPortfolioPublic;
+            
+        }
+
         public async Task<Portfolio> CreateAsync(Portfolio portfolio)
         {
             await _context.portfolios.AddAsync(portfolio);
