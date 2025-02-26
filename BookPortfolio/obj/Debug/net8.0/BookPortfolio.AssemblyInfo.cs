@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookPortfolio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7503802d0a6c922312af582c835aa15685957fe1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74f21bae7891a68d7aa54e336a82809d39a663a9")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookPortfolio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookPortfolio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
