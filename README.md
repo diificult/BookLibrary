@@ -27,22 +27,12 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Book Portfolio</h3>
 
   <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    &middot;
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    &middot;
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    A website to display all the books you have been reading in one, simple place.  
   </p>
 </div>
 
@@ -76,9 +66,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started. To avoid retyping too much info, do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`, `project_license`
+This project was to use some of the key ASP.NET skills that I had, to create a project. The website is designed to take a book ISBN and add it to your personal page which you can edit. You are able to view another persons portfolio, if its public, by going to example.com/[Username]. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,6 +93,7 @@ Once this project is in a better foundation, there will be more indepth instruct
 ### Installation
 
 Clone the project and open BookPortfolio.sln. 
+Update the database to add it to your system.
 Ensure the project is set to HTTPS and press run.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -137,6 +126,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 - [ ] Improve editing feature set
 - [ ] The ability to select which cover or any details for a book when you insert into your portfolio
 - [ ] More details about the book on the pages.
+- [ ] Query a book title to then select which to add to your portfolio
 - [ ] Fix all the bugs
 - [ ] Look at any improvements for security and ensure the code is following key design principles (which it should already be)
       
