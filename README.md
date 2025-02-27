@@ -86,7 +86,10 @@ Here's a blank template to get started. To avoid retyping too much info, do a se
 
 ### Built With
 
-* 
+* C#
+* ASP.NET using MVC
+* SQL
+* Razor Pages
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -96,11 +99,13 @@ Here's a blank template to get started. To avoid retyping too much info, do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+This project is currently designed to be runnable within Visual Studios, however you are able to run it using "dotnet run".
+Once this project is in a better foundation, there will be more indepth instruction for useage for running this project for personal use.
 
 ### Installation
 
+Clone the project and open BookPortfolio.sln. 
+Ensure the project is set to HTTPS and press run.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -132,6 +137,8 @@ Use this space to show useful examples of how a project can be used. Additional 
 - [ ] Improve editing feature set
 - [ ] The ability to select which cover or any details for a book when you insert into your portfolio
 - [ ] More details about the book on the pages.
+- [ ] Fix all the bugs
+- [ ] Look at any improvements for security and ensure the code is following key design principles (which it should already be)
       
 
 
@@ -151,7 +158,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 Owen - contact@owenhowarth.co.uk
 
-Project Link: [https://github.com/diificult/CarAI/](https://github.com/diificult/CarAI/)
+Project Link: [https://github.com/diificult/BookLibrary](https://github.com/diificult/BookLibrary)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
