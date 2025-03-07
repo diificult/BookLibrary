@@ -56,8 +56,8 @@ namespace BookPortfolio.Controllers
         [HttpGet]
         public IActionResult AddPortfolio() => View();
         [HttpPost]
-        [Route("Portfolio/AddToPortfolio")]
-        public async Task<IActionResult> AddPortfolio([FromBody]CreatePortfolioDto createPortfolioDto)
+        [Route("Portfolio/AddPortfolio")]
+        public async Task<IActionResult> AddPortfolio([FromForm]CreatePortfolioDto createPortfolioDto)
         {
             var claims = User.Claims.ToList();
             if (!User.Identity.IsAuthenticated)

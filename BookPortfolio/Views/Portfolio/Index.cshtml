@@ -3,7 +3,7 @@
 
 @{
     ViewData["Title"] = ViewData["Username"] + "'s Bookshelf";
-
+    string[] States = ["Reading", "Read", "To Read", "Want To Read"];
 }
 
 <div>
@@ -18,194 +18,29 @@
 </div>
 
 
-<h3>Currently Reading</h3>
-<div class="shelf d-flex p-4 m-2">
-    @foreach (var item in Model.Where(b => b.BookState == "Reading"))
-    {
 
 
+@foreach (var state in States) {
 
-		<div class="card" style="width: 12rem;">
-			@{
-                string imgUrl = "";
-			    if (item.Book.coverIds == null)
-			    {
-				    <img src="img/defbookcover-min.jpg" />
-			    }
-			    else
-			    {
-				    imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
-                    <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
-
-			    }
-            }
-            <div class="card-body">
-                <strong>@item.Book.Title</strong> by @item.Book.Author
-
-                <br />
-                @if (item.Rating != null)
-                {
-                    <div>
-                        Rating: @item.Rating/5
-                    </div>
-                }
-                <br />
-                @if (item.Comment != null)
-                {
-                    <div>
-                        Comment: @item.Comment
-                    </div>
-                }
-
-                <br />
-                <label for="bookState-@item.Book.Id">Update State:</label>
-                @{
-                    var states = new[] { "Reading", "Read", "To Read", "Want to Read" };
-                }
-                <select class="form-control bookStateDropdown" book-id="@item.Book.Id">
-                    @foreach (var state in states)
-                    {
-                        var isSelected = item.BookState == state ? "selected" : "";
-                        <option value="@state" isSelected>@state</option>
-                    }
-                </select>
-            </div>
-        </div>
-    }
-</div>
-
-	<h3>Read</h3>
-<div class="shelf d-flex p-4 m-2">
-    @foreach (var item in Model.Where(b => b.BookState == "Read"))
-    {
-        
-
-        <div class="card" style="width: 12rem;">
-            @{
-                string imgUrl = "";
-                if (item.Book.coverIds == null)
-                {
-                    <img src="img/defbookcover-min.jpg" />
-                }
-                else
-                {
-                    imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
-                    <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
-
-                }
-            }
-            <div class="card-body">
-                <strong>@item.Book.Title</strong> by @item.Book.Author
-
-                <br />
-                @if (item.Rating != null)
-                {
-                    <div>
-                        Rating: @item.Rating/5
-                    </div>
-                }
-                <br />
-                @if (item.Comment != null)
-                {
-                    <div>
-                        Comment: @item.Comment
-                    </div>
-                }
-
-                <br />
-                <label for="bookState-@item.Book.Id">Update State:</label>
-                @{
-                    var states = new[] { "Reading", "Read", "To Read", "Want to Read" };
-                }
-                <select class="form-control bookStateDropdown" book-id="@item.Book.Id">
-                    @foreach (var state in states)
-                    {
-                        var isSelected = item.BookState == state ? "selected" : "";
-                        <option value="@state" isSelected>@state</option>
-                    }
-                </select>
-            </div>
-        </div>
-    }
-</div>
-
-<h3>To Read</h3>
-<div class="shelf d-flex p-4 m-2">
-    @foreach (var item in Model.Where(b => b.BookState == "To Read"))
-    {
-
-        <div class="card" style="width: 12rem;">
-            @{
-                string imgUrl = "";
-                if (item.Book.coverIds == null)
-                {
-                    <img src="img/defbookcover-min.jpg" />
-                }
-                else
-                {
-                    imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
-                    <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
-
-                }
-            }
-            <div class="card-body">
-                <strong>@item.Book.Title</strong> by @item.Book.Author
-
-                <br />
-                @if (item.Rating != null)
-                {
-                    <div>
-                        Rating: @item.Rating/5
-                    </div>
-                }
-                <br />
-                @if (item.Comment != null)
-                {
-                    <div>
-                        Comment: @item.Comment
-                    </div>
-                }
-
-                <br />
-                <label for="bookState-@item.Book.Id">Update State:</label>
-                @{
-                    var states = new[] { "Reading", "Read", "To Read", "Want to Read" };
-                }
-                <select class="form-control bookStateDropdown" book-id="@item.Book.Id">
-                    @foreach (var state in states)
-                    {
-                        var isSelected = item.BookState == state ? "selected" : "";
-                        <option value="@state" isSelected>@state</option>
-                    }
-                </select>
-            </div>
-        </div>
-    }
-</div>
-
-
-
-
-
-	<h3>Want To Read</h3>
+    <h3>@state</h3>
     <div class="shelf d-flex p-4 m-2">
-        @foreach (var item in Model.Where(b => b.BookState == "Want To Read"))
+        @foreach (var item in Model.Where(b => b.BookState == state))
         {
 
             <div class="card" style="width: 12rem;">
-            @{
-                string imgUrl = "";
-                if (item.Book.coverIds == null)
-                {
-                    <img src="img/defbookcover-min.jpg" />
-                }
-                else
-                {
-                    imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
-                    <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
+                @{
+                    string imgUrl = "";
+                    if (item.Book.coverIds == null)
+                    {
+                        <img src="img/defbookcover-min.jpg" />
+                    }
+                    else
+                    {
+                        imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
+                        <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
 
+                    }
                 }
-            }
                 <div class="card-body">
                     <strong>@item.Book.Title</strong> by @item.Book.Author
 
@@ -230,19 +65,22 @@
                         var states = new[] { "Reading", "Read", "To Read", "Want to Read" };
                     }
                     <select class="form-control bookStateDropdown" book-id="@item.Book.Id">
-                        @foreach (var state in states)
+                        @foreach (var substate in states)
                         {
-                            var isSelected = item.BookState == state ? "selected" : "";
-                            <option value="@state" isSelected>@state</option>
+                            var isSelected = state == substate ? "selected" : "";
+                            Console.WriteLine(isSelected + ", " + state + ",  " + substate);
+                            <option value="@substate" selected="@(state == substate ? "selected" : null)">@substate</option>
                         }
                     </select>
                 </div>
             </div>
         }
     </div>
+}
 
 
-<!-- //TODO UPDATE TO BETTER CODE AS I THINK IT COULD BE BETTER (might be wrong) -->
+
+<!-- //TODO UPDATE TO BETTER CODE AS I THINK IT COULD BE BETTER (might be wrong, not very strong at this code :() -->
 <script>
 		document.addEventListener("DOMContentLoaded", function() {
 		document.querySelectorAll(".bookStateDropdown").forEach(dropdown => {
