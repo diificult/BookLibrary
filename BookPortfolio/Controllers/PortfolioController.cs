@@ -56,7 +56,8 @@ namespace BookPortfolio.Controllers
         [HttpGet]
         public IActionResult AddPortfolio() => View();
         [HttpPost]
-        public async Task<IActionResult> AddPortfolio(CreatePortfolioDto createPortfolioDto)
+        [Route("Portfolio/AddToPortfolio")]
+        public async Task<IActionResult> AddPortfolio([FromBody]CreatePortfolioDto createPortfolioDto)
         {
             var claims = User.Claims.ToList();
             if (!User.Identity.IsAuthenticated)
@@ -91,6 +92,31 @@ namespace BookPortfolio.Controllers
             await _portfolioRepository.CreateAsync(portfolioModel);
             if (portfolioModel == null) return StatusCode(500, "Couldn't create");
             else return RedirectToAction("Index", "Portfolio");
+        }
+
+        [HttpPost("AddToPortfolio")]
+        public async Task<IActionResult> AddToPortfolio([FromForm]int bookId)
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                Console.WriteLine(" User is NOT authenticated inside PortfolioController!");
+                return RedirectToAction("Login", "Account");
+            }
+            Console.WriteLine($"Adding book: {bookId}");
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var book = await _bookRepository.GetByIdAsync(bookId);
+            var userPortfolio = await _portfolioRepository.GetUserPortfolio(user);
+            var portfolioModel = new Portfolio { AppUserId = user.Id, BookId = bookId, BookState = "Want To Read" };
+            if (userPortfolio.Any(b => b.ISBN_10 == book.ISBN_10 || b.ISBN_13 == book.ISBN_13))
+            {
+                TempData["Error"] = "Book already in portfolio";
+                return Redirect(Request.Headers["Referer"].ToString());
+            }
+            await _portfolioRepository.CreateAsync(portfolioModel);
+            if (portfolioModel == null) TempData["Error"] = "Couldnt add book - error";
+            else TempData["Sucess"] = "Added book";
+            return Redirect(Request.Headers["Referer"].ToString());
+
         }
 
         [HttpGet]

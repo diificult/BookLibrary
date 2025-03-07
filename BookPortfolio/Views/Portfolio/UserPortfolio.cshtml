@@ -12,9 +12,6 @@
 <div class="shelf d-flex p-4 m-2">
     @foreach (var item in Model.Where(b => b.BookState == "Reading"))
     {
-
-
-
         <div class="card" style="width: 12rem;">
             @{
                 string imgUrl = "";
@@ -46,6 +43,20 @@
                         Comment: @item.Comment
                     </div>
 
+                }
+               
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success">@TempData["Success"]</div>
+                }
+                else if (TempData["Error"] != null)
+                {
+                    <div class="alert alert-danger">@TempData["Error"]</div>
+                } else {
+                <form method="post" action="@Url.Action("AddToPortfolio", "Portfolio")">
+                    <input type="hidden" name="bookId" value="@item.Book.Id" />
+                    <button type="submit">Add to your Bookshelf</button>
+                </form>
                 }
             </div>
         </div>

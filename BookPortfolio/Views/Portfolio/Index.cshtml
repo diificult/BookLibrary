@@ -62,7 +62,7 @@
                 @{
                     var states = new[] { "Reading", "Read", "To Read", "Want to Read" };
                 }
-                <select class="form-control bookStateDropdown" data-book-id="@item.Book.Id">
+                <select class="form-control bookStateDropdown" book-id="@item.Book.Id">
                     @foreach (var state in states)
                     {
                         var isSelected = item.BookState == state ? "selected" : "";
@@ -117,7 +117,7 @@
                 @{
                     var states = new[] { "Reading", "Read", "To Read", "Want to Read" };
                 }
-                <select class="form-control bookStateDropdown" data-book-id="@item.Book.Id">
+                <select class="form-control bookStateDropdown" book-id="@item.Book.Id">
                     @foreach (var state in states)
                     {
                         var isSelected = item.BookState == state ? "selected" : "";
@@ -171,7 +171,7 @@
                 @{
                     var states = new[] { "Reading", "Read", "To Read", "Want to Read" };
                 }
-                <select class="form-control bookStateDropdown" data-book-id="@item.Book.Id">
+                <select class="form-control bookStateDropdown" book-id="@item.Book.Id">
                     @foreach (var state in states)
                     {
                         var isSelected = item.BookState == state ? "selected" : "";
@@ -229,7 +229,7 @@
                     @{
                         var states = new[] { "Reading", "Read", "To Read", "Want to Read" };
                     }
-                    <select class="form-control bookStateDropdown" data-book-id="@item.Book.Id">
+                    <select class="form-control bookStateDropdown" book-id="@item.Book.Id">
                         @foreach (var state in states)
                         {
                             var isSelected = item.BookState == state ? "selected" : "";
@@ -247,7 +247,7 @@
 		document.addEventListener("DOMContentLoaded", function() {
 		document.querySelectorAll(".bookStateDropdown").forEach(dropdown => {
 			dropdown.addEventListener("change", function() {
-				let bookId = this.getAttribute("data-book-id");
+				let bookId = this.getAttribute("book-id");
 				let newState = this.value;
 				let token = document.querySelector("input[name='__RequestVerificationToken']")?.value;
 

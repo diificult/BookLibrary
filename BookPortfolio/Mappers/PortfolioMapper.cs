@@ -1,6 +1,5 @@
 ﻿using BookPortfolio.Dtos.Portfolios;
 using BookPortfolio.Models;
-using Microsoft.Identity.Client;
 
 namespace BookPortfolio.Mappers
 {
@@ -16,6 +15,17 @@ namespace BookPortfolio.Mappers
                 Rating = dto.Rating,
                 BookState = dto.BookState,
                 Comment = dto.Comment,
+            };
+        }
+
+        public static Portfolio ToPortfolioFromAdd(this string UserId, int bookId, string bookState)
+        {
+            return new Portfolio
+            {
+                AppUserId = UserId,
+                BookId = bookId,
+                BookState = bookState
+
             };
         }
     }
