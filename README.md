@@ -1,5 +1,7 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
 <a id="readme-top"></a>
+
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
@@ -7,8 +9,6 @@
 *** Don't forget to give the project a star!
 *** Thanks again! Now go create something AMAZING! :D
 -->
-
-
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -18,10 +18,9 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -35,8 +34,6 @@
     A website to display all the books you have been reading in one, simple place.  
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -61,46 +58,42 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
-This project was to use some of the key ASP.NET skills that I had, to create a project. The website is designed to take a book ISBN and add it to your personal page which you can edit. You are able to view another persons portfolio, if its public, by going to example.com/[Username]. 
+This project was to use some of the key ASP.NET skills that I had, to create a project. The website is designed to take a book ISBN and add it to your personal page which you can edit. You are able to view another persons portfolio, if its public, by going to example.com/[Username].
+
+The focus for this project was on the backend, rather then front end design.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Built With
 
-* C#
-* ASP.NET using MVC
-* SQL
-* Razor Pages
-
+-   C#
+-   ASP.NET using MVC
+-   SQL
+-   Razor Pages
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 This project is currently designed to be runnable within Visual Studios, however you are able to run it using "dotnet run".
-Once this project is in a better foundation, there will be more indepth instruction for useage for running this project for personal use.
+Once this project is in a better foundation, there will be more in-depth instruction for usage for running this project for personal use.
 
 ### Installation
 
-Clone the project and open BookPortfolio.sln. 
+Clone the project and open BookPortfolio.sln.
 Update the database to add it to your system.
 Ensure the project is set to HTTPS and press run.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
 First you need to be able to Login/Register
@@ -114,36 +107,26 @@ Public view page. A user can put in example.com/[Username] and will bring up the
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ROADMAP -->
+
 ## Roadmap
 
-- [ ] Add a button to add a book from another person's portfoliot to "Want to reads"
-- [ ] Improve editing feature set
-- [ ] The ability to select which cover or any details for a book when you insert into your portfolio
-- [ ] More details about the book on the pages.
-- [ ] Query a book title to then select which to add to your portfolio
-- [ ] Fix all the bugs
-- [ ] Look at any improvements for security and ensure the code is following key design principles (which it should already be)
-      
+-   [x] Add a button to add a book from another person's portfolio to "Want to reads"
+-   [ ] Improve editing feature set.
+-   [ ] The ability to select which cover or any details for a book when you insert into your portfolio.
+-   [ ] More details about the book on the pages.
+-   [ ] Query a book title to then select which to add to your portfolio.
 
+STRETCH GOAL
+
+-   [ ] AI recommender system - AI is prepared and can be trained, however test datasets are outdated, plus needs data on website (Might just create some "temp" data to demonstrate this feature)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-
-
-
-
-
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Owen - contact@owenhowarth.co.uk
@@ -152,21 +135,19 @@ Project Link: [https://github.com/diificult/BookLibrary](https://github.com/diif
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
-* [Read Me Template](https://github.com/othneildrew/Best-README-Template/tree/main)
-* []()
-* []()
+-   [Read Me Template](https://github.com/othneildrew/Best-README-Template/tree/main)
+-   []()
+-   []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
 [contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
@@ -195,4 +176,4 @@ Project Link: [https://github.com/diificult/BookLibrary](https://github.com/diif
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+[JQuery-url]: https://jquery.com

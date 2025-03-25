@@ -11,5 +11,6 @@ namespace BookPortfolio.Interfaces
         Task<bool> CheckIfPortfolioPublic(AppUser appUser);
 
         Task<Portfolio?> UpdateStateAsync(AppUser appUser, int bookId, string newState);
+        Task<List<Portfolio>> GetUserReviews(string userId);
     }
 }

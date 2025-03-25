@@ -103,5 +103,16 @@ namespace BookPortfolio.Controllers
             else return BadRequest("Book not in portfolio");
             return Ok();
         }
+
+        //Check security for this in future, previous function requires auth but they could get around it using this.
+        /*
+        [HttpGet("user-reviews/{userId}")]
+        public async Task<IActionResult> GetUserReview(string userId)
+        {
+
+            var portfolio = await _portfolioRepository.GetUserReviews(userId);
+            return Ok(portfolio);
+        }
+        */
     }
 }

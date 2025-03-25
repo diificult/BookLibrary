@@ -3,6 +3,7 @@ wwwroot\cache\10472117-M.jpg
 wwwroot\cache\12383003-M.jpg
 wwwroot\cache\12968901-M.jpg
 wwwroot\cache\14139696-M.jpg
+wwwroot\cache\14813943-M.jpg
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\img\defbookcover-min.jpg

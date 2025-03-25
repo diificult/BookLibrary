@@ -59,6 +59,11 @@ namespace BookPortfolio.Repositorys
             return await _context.portfolios.Where(u => u.AppUserId == user.Id).Include(p => p.Book).ToListAsync();
         }
 
+        public async Task<List<Portfolio>> GetUserReviews(string userId)
+        {
+            return await _context.portfolios.Where(u => u.AppUserId == userId).Include(p => p.Book).Where(p => p.Rating != null).ToListAsync();
+        }
+
         public async Task<Portfolio?> UpdateStateAsync(AppUser appUser, int bookId, string newState)
         {
             var existingPortfolio = await _context.portfolios.FirstOrDefaultAsync(x => x.AppUserId == appUser.Id && x.BookId == bookId);

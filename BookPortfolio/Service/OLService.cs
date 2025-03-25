@@ -17,6 +17,40 @@ namespace BookPortfolio.Service
             _configuration = configuration;
         }
 
+        //PUTTING ON PAUSE as I've changed plans, may delete if I decide to not go ahead. 
+        /*
+        public async Task<List<Book>> FindRelatedBooks(string ISBN)
+        {
+            List<Book> books = new List<Book>();
+            try
+            {
+                var result = await _httpClient.GetAsync($"https://openlibrary.org/isbn/{ISBN}.json");
+                if (result.IsSuccessStatusCode)
+                {
+                    var content = await result.Content.ReadAsStringAsync();
+                    var tasks = JsonConvert.DeserializeObject<OLBook>(content);
+                    if (tasks != null)
+                    {
+                        books.Add(tasks.ToBookFromOL());
+                        // Search for related books. 
+                        var title = tasks.title;
+                        title = title.Replace(' ', '+');
+                        result = await _httpClient.GetAsync($"https://openlibrary.org/serach.json?title={title}&fields=editions");
+                        if (result.IsSuccessStatusCode)
+                        {
+                             content = await result.Content.ReadAsStringAsync();
+
+                        }
+                    }
+                    else
+                    {
+                        //Book not found.
+                    }
+                }
+            }
+        }
+        */
+
         public async Task<Book> FindBookByISBNSync(string ISBN)
         {
             try
