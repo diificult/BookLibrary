@@ -113,15 +113,25 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 ## Roadmap
 
+### 0.1
+
 -   [x] Add a button to add a book from another person's portfolio to "Want to reads"
+
+### 0.2
+
+-   [ ] Query a book title to then select which to add to your portfolio.
+-   [ ] Implement CI/CD to strengthen this skill.
+
+### 0.3
+
 -   [ ] Improve editing feature set.
 -   [ ] The ability to select which cover or any details for a book when you insert into your portfolio.
 -   [ ] More details about the book on the pages.
--   [ ] Query a book title to then select which to add to your portfolio.
 
-STRETCH GOAL
+### STRETCH GOAL - Goals that are out of scope for the moment, but desire to do.
 
--   [ ] AI recommender system - AI is prepared and can be trained, however test datasets are outdated, plus needs data on website (Might just create some "temp" data to demonstrate this feature)
+-   [ ] Move from Razor pages to using React.
+-   [ ] AI recommender system - AI is prepared and can be trained, however test datasets are outdated, plus needs data on website (Might just create some "temp" data to demonstrate this feature).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
