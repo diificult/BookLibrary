@@ -1,0 +1,9 @@
+﻿@model BookPortfolio.Helpers.BookQueryHelper
+@using (Html.BeginForm("SearchResults", "Book", FormMethod.Get))
+{
+    @Html.TextBoxFor(m => m.SearchTerm)
+
+    <div>
+        <input type="submit" value="Search" />
+    </div>
+}

@@ -2,9 +2,7 @@
 {
     public class BookQueryHelper
     {
-        public string? Author { get; set; } = null;
-        public string? Title { get; set; } = null;
-
+        public string? SearchTerm { get; set; } = null;
         public string? SortBy { get; set; } = null;
 
         public bool IsDescending { get; set; } = false;

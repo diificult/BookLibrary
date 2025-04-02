@@ -17,7 +17,7 @@ namespace BookPortfolio.Models
 
         public int[]? coverIds { get; set; } 
 
-        public DateTime LastUpdated { get; set; } = DateTime.Now;
+        public DateTime? LastUpdated { get; set; } = DateTime.Now;
 
         public List<Portfolio> Portfolios { get; set; } = new List<Portfolio>();
 

@@ -1,6 +1,4 @@
-﻿
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -31,6 +29,7 @@
 							<a class="nav-link text-dark" asp-area="" asp-controller="Portfolio" asp-action="Index">Your Portfolio</a>
 						</li>
                     </ul>
+                    @Html.Partial("_SearchPartial", ViewData["SearchQuery"])
                     <partial name="_LoginPartial" />
                 </div>
             </div>

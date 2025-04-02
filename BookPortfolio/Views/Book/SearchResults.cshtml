@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BookPortfolio.Models.Book>
+
+
+<div class="shelf d-flex p-4 m-2">
+	@foreach (var item in Model) {
+
+    
+	<div class="card" style="width: 12rem;">
+                @{
+                    string imgUrl = "";
+                    if (item.coverIds == null)
+                    {
+                        <img src="img/defbookcover-min.jpg" />
+                    }
+                    else
+                    {
+                        imgUrl = $"https://covers.openlibrary.org/b/id/{item.coverIds[0]}-M.jpg";
+                        <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
+
+                    }
+                }
+                <div class="card-body">
+                    <strong>@item.Title</strong> by @item.Author
+
+                    <br />
+                        <p>Published: @item.PublishDate</p>
+                    <br />
+                    <button> Add to Want to Read </button>
+                    <button> View Book</button>
+                </div>
+            </div>
+   }
+    </div>

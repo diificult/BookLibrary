@@ -32,8 +32,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Books/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcSW5kZXguY3NodG1s
+[C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Book/BookView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xCb29rVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Book/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Book/SearchResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xTZWFyY2hSZXN1bHRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Home/Index.cshtml]
@@ -62,6 +70,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Shared/_SearchPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TZWFyY2hQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/OwenWork/Documents/Tutorials/ASPnet/BookLibrary/BookPortfolio/Views/Shared/_ValidationScriptsPartial.cshtml]

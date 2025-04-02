@@ -29,15 +29,25 @@ namespace BookPortfolio.Repositorys
 
         public async Task<List<Book>> GetAllAsync(BookQueryHelper query)
         {
-            var books = _context.books.AsQueryable();
-            
-            if (!string.IsNullOrWhiteSpace(query.Author))
+            var books = _context.books.Select(book => new Book
             {
-                books = books.Where(s => s.Author.Contains(query.Author));
-            }
-            if (!string.IsNullOrEmpty(query.Title))
+
+                Id = book.BookId,
+                Author = book.Book.Author,
+                Title = book.Book.Title,
+                PublishDate = book.Book.PublishDate,
+                ISBN_10 = book.Book.ISBN_10,
+                ISBN_13 = book.Book.ISBN_13,
+                language = book.Book.language,
+                coverIds = book.Book.coverIds,
+            }).AsQueryable();
+
+
+
+            if (!string.IsNullOrWhiteSpace(query.SearchTerm))
             {
-                books = books.Where(s=> s.Title.Contains(query.Title));
+                books = books.Where(s => s.Author.ToUpper().Contains(query.SearchTerm.ToUpper()) || s.Title.ToUpper().Contains(query.SearchTerm.ToUpper()));
+                Console.WriteLine("Books is" + books.Count());
             }
             if (!string.IsNullOrWhiteSpace(query.SortBy))
             {
@@ -53,8 +63,14 @@ namespace BookPortfolio.Repositorys
             }
 
             var skipNumber = (query.PageNumber - 1) * query.PageSize;
-            
-            return await books.Skip(skipNumber).Take(query.PageNumber).ToListAsync();
+
+            var allBooks = await books.ToListAsync();  // Fetch everything first
+            foreach (var book in allBooks)
+            {
+                Console.WriteLine($"Book ID: {book.Id}, CoverIds: {string.Join(",", book.coverIds ?? new int[0])}");
+            }
+            var paginatedBooks = allBooks.Skip(skipNumber).Take(query.PageNumber);
+            return paginatedBooks.ToList();
         }
 
         public async Task<Book?> GetByISBNAsync(string ISBN)

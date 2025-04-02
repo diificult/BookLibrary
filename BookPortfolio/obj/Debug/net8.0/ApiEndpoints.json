@@ -40,12 +40,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Author",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Title",
+        "Name": "SearchTerm",
         "Type": "System.String",
         "IsRequired": false
       },

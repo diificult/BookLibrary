@@ -1,5 +1,6 @@
 ﻿using BookPortfolio.Data;
 using BookPortfolio.Dtos.Book;
+using BookPortfolio.Interfaces;
 using BookPortfolio.Mappers;
 using BookPortfolio.Models;
 using BookPortfolio.Repositorys;
@@ -12,13 +13,12 @@ namespace BookPortfolio.Controllers
     public class BookController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<ApplicationDbContext> _userManager;
-        private readonly BookRepository _bookRepository;
+        private readonly IBookRepository _bookRepository;
 
-        public BookController(ApplicationDbContext context, UserManager<ApplicationDbContext> userManager)
+        public BookController(ApplicationDbContext context, IBookRepository bookRepository)
         {
             _context = context;
-            _userManager = userManager;
+            _bookRepository = bookRepository;
         }
 
         [AllowAnonymous]
@@ -48,7 +48,7 @@ namespace BookPortfolio.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] Helpers.BookQueryHelper query)
+        public async Task<IActionResult> SearchResults([FromQuery] Helpers.BookQueryHelper query)
         {
             if (!ModelState.IsValid)
             {
@@ -56,7 +56,8 @@ namespace BookPortfolio.Controllers
             }
             var books = await _bookRepository.GetAllAsync(query);
             var bookDto = books.Select(b => b.ToBookDto()).ToList();
-            return View(bookDto);
+            Console.WriteLine("Found " + books.Count + " books with the query " + query.SearchTerm);
+            return View(books);
         }
     }
 }
