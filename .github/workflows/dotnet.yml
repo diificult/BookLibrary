@@ -3,11 +3,17 @@
 
 name: .NET
 
+defaults:
+  run:
+    working-directory: ./BookPortfolio
+
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+
+
 
 jobs:
   build:
@@ -16,8 +22,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Enters Folder
-      run: cd BookPortfolio
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
