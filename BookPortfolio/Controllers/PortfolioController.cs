@@ -113,6 +113,7 @@ namespace BookPortfolio.Controllers
                 return Redirect(Request.Headers["Referer"].ToString());
             }
             await _portfolioRepository.CreateAsync(portfolioModel);
+            TempData["BookId"] = ""+bookId;
             if (portfolioModel == null) TempData["Error"] = "Couldnt add book - error";
             else TempData["Sucess"] = "Added book";
             return Redirect(Request.Headers["Referer"].ToString());

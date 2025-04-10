@@ -2,15 +2,22 @@
 @model IEnumerable<BookPortfolio.Models.Portfolio>
 @inject UserManager<AppUser> UserManager
 
+@{
+    string[] States = ["Reading", "Read", "To Read", "Want To Read"];
+ }
+
 <h2>@Model.FirstOrDefault()?.AppUser.UserName's Portfolio</h2>
 
 @if (Model.FirstOrDefault()?.AppUser.UserName == UserManager.GetUserName(User)) {
     <a class="btn btn-outline-secondary" asp-area="" asp-controller="Portfolio" asp-action="Index">Return to edit view</a>
 }
 
-<h3>Currently Reading</h3>
-<div class="shelf d-flex p-4 m-2">
-    @foreach (var item in Model.Where(b => b.BookState == "Reading"))
+
+@foreach (var state in States) {
+
+    <h3>@state</h3>
+    <div class="shelf d-flex p-4 m-2">
+    @foreach (var item in Model.Where(b => b.BookState == state))
     {
         <div class="card" style="width: 12rem;">
             @{
@@ -45,149 +52,25 @@
 
                 }
                
-                @if (TempData["Success"] != null)
+                @if (TempData["Success"] != null && (string) TempData["BookId"] == "" + item.Book.Id)
                 {
                     <div class="alert alert-success">@TempData["Success"]</div>
                 }
-                else if (TempData["Error"] != null)
+                else if (TempData["Error"] != null && (string) TempData["BookId"] == "" + item.Book.Id)
                 {
                     <div class="alert alert-danger">@TempData["Error"]</div>
                 } else {
-                <form method="post" action="@Url.Action("AddToPortfolio", "Portfolio")">
-                    <input type="hidden" name="bookId" value="@item.Book.Id" />
-                    <button type="submit">Add to your Bookshelf</button>
-                </form>
+                    if (UserManager.GetUserName(User) != null) {
+                    <form method="post" action="@Url.Action("AddToPortfolio", "Portfolio")">
+                        <input type="hidden" name="bookId" value="@item.Book.Id" />
+                        <button type="submit">Add to your Bookshelf</button>
+                    </form>
+                    }
+                
                 }
             </div>
         </div>
     }
 </div>
 
-<h3>Read</h3>
-<div class="shelf d-flex p-4 m-2">
-    @foreach (var item in Model.Where(b => b.BookState == "Read"))
-    {
-
-        <div class="card" style="width: 12rem;">
-            @{
-                string imgUrl = "";
-                if (item.Book.coverIds == null)
-                {
-                    <img src="img/defbookcover-min.jpg" />
-                }
-                else
-                {
-                    imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
-                    <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
-
-                }
-            }
-            <div class="card-body">
-                <strong>@item.Book.Title</strong> by @item.Book.Author
-                <br />
-                @if (item.Rating != null)
-                {
-                    <div>
-                        Rating: @item.Rating/5
-                    </div>
-
-                }
-                <br />
-                @if (item.Comment != null)
-                {
-                    <div>
-                        Comment: @item.Comment
-                    </div>
-
-                }
-            </div>
-        </div>
-    }
-</div>
-
-<h3>To Read</h3>
-<div class="shelf d-flex p-4 m-2">
-    @foreach (var item in Model.Where(b => b.BookState == "To Read"))
-    {
-
-
-        <div class="card" style="width: 12rem;">
-            @{
-                string imgUrl = "";
-                if (item.Book.coverIds == null)
-                {
-                    <img src="img/defbookcover-min.jpg" />
-                }
-                else
-                {
-                    imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
-                    <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
-
-                }
-            }
-            <div class="card-body">
-                <strong>@item.Book.Title</strong> by @item.Book.Author
-
-                <br />
-                @if (item.Rating != null)
-                {
-                    <div>
-                        Rating: @item.Rating/5
-                    </div>
-
-                }
-                <br />
-                @if (item.Comment != null)
-                {
-                    <div>
-                        Comment: @item.Comment
-                    </div>
-
-                }
-            </div>
-        </div>
-    }
-</div>
-
-<div class="shelf d-flex p-4 m-2">
-    <h3>Want To Read</h3>
-    @foreach (var item in Model.Where(b => b.BookState == "Want To Read"))
-    {
-
-
-        <div class="card" style="width: 18rem;">
-            @{
-                string imgUrl = "";
-                if (item.Book.coverIds == null)
-                {
-                    <img src="img/defbookcover-min.jpg" />
-                }
-                else
-                {
-                    imgUrl = $"https://covers.openlibrary.org/b/id/{item.Book.coverIds[0]}-M.jpg";
-                    <img src="@Url.Action("GetCachedImage", "Image", new {imageUrl = imgUrl})" class="card-img-top" alt="Book Cover" />
-
-                }
-            }
-            <div class="card-body">
-                <strong>@item.Book.Title</strong> by @item.Book.Author
-                <br />
-                @if (item.Rating != null)
-                {
-                    <div>
-                        Rating: @item.Rating/5
-                    </div>
-
-                }
-                <br />
-                @if (item.Comment != null)
-                {
-                    <div>
-                        Comment: @item.Comment
-                    </div>
-
-                }
-            </div>
-        </div>
-    }
-</div>
+}

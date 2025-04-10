@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<BookPortfolio.Models.Book>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> UserManager
+
 
 
 <div class="shelf d-flex p-4 m-2">
@@ -10,7 +13,7 @@
                     string imgUrl = "";
                     if (item.coverIds == null)
                     {
-                        <img src="img/defbookcover-min.jpg" />
+                        <img src="/img/defbookcover-min.jpg" />
                     }
                     else
                     {
@@ -25,8 +28,14 @@
                     <br />
                         <p>Published: @item.PublishDate</p>
                     <br />
-                    <button> Add to Want to Read </button>
-                    <button> View Book</button>
+                    @if (UserManager.GetUserName(User) != null ) {
+                    <form method="post" action="@Url.Action("AddToPortfolio", "Portfolio")">
+                        <input type="hidden" name="bookId" value="@item.Id" />
+                        <button type="submit">Add to your Bookshelf</button>
+                    </form>
+                     //   <button> View Book</button>
+                    }
+                    
                 </div>
             </div>
    }

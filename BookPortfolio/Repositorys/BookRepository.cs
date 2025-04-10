@@ -29,17 +29,20 @@ namespace BookPortfolio.Repositorys
 
         public async Task<List<Book>> GetAllAsync(BookQueryHelper query)
         {
+
+
+
             var books = _context.books.Select(book => new Book
             {
 
-                Id = book.BookId,
-                Author = book.Book.Author,
-                Title = book.Book.Title,
-                PublishDate = book.Book.PublishDate,
-                ISBN_10 = book.Book.ISBN_10,
-                ISBN_13 = book.Book.ISBN_13,
-                language = book.Book.language,
-                coverIds = book.Book.coverIds,
+                Id = book.Id,
+                Author = book.Author,
+                Title = book.Title,
+                PublishDate = book.PublishDate,
+                ISBN_10 = book.ISBN_10,
+                ISBN_13 = book.ISBN_13,
+                language = book.language,
+                coverIds = book.coverIds,
             }).AsQueryable();
 
 
@@ -63,14 +66,8 @@ namespace BookPortfolio.Repositorys
             }
 
             var skipNumber = (query.PageNumber - 1) * query.PageSize;
-
-            var allBooks = await books.ToListAsync();  // Fetch everything first
-            foreach (var book in allBooks)
-            {
-                Console.WriteLine($"Book ID: {book.Id}, CoverIds: {string.Join(",", book.coverIds ?? new int[0])}");
-            }
-            var paginatedBooks = allBooks.Skip(skipNumber).Take(query.PageNumber);
-            return paginatedBooks.ToList();
+            //  return await books.Skip(skipNumber).Take(query.PageNumber).ToListAsync();
+            return await books.ToListAsync();
         }
 
         public async Task<Book?> GetByISBNAsync(string ISBN)
