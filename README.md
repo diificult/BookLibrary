@@ -74,6 +74,7 @@ The focus for this project was on the backend, rather then front end design.
 -   ASP.NET using MVC
 -   SQL
 -   Razor Pages
+-   GitHub Acttions
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -119,7 +120,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 ### 0.2
 
--   [ ] Query a book title to then select which to add to your portfolio.
+-   [x] Query a book title to then select which to add to your portfolio.
 -   [ ] Implement CI/CD to strengthen this skill.
 
 ### 0.3
