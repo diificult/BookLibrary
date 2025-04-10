@@ -3,7 +3,7 @@
 @inject UserManager<AppUser> UserManager
 
 
-
+<h4> Book not here?</h4> <button>Add it here</button>
 <div class="shelf d-flex p-4 m-2">
 	@foreach (var item in Model) {
 
@@ -33,9 +33,13 @@
                         <input type="hidden" name="bookId" value="@item.Id" />
                         <button type="submit">Add to your Bookshelf</button>
                     </form>
-                     //   <button> View Book</button>
+
+
+                        
                     }
-                    
+                <form method="get" action="/BookView/@item.Id">
+                    <button type="submit">View Book</button>
+                </form>
                 </div>
             </div>
    }

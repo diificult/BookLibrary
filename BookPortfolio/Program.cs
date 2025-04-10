@@ -126,6 +126,12 @@ app.MapControllerRoute(
     defaults: new { Controller = "Portfolio", action = "UserPortfolio" }
 );
 
+app.MapControllerRoute(
+    name: "BookView",
+    pattern: "BookView/{bookId}",
+    defaults: new { Controller = "Book", action = "BookView" }
+    );
+
 app.MapControllers();
 app.MapDefaultControllerRoute();
 app.MapRazorPages();

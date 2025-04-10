@@ -2,10 +2,7 @@
 using BookPortfolio.Dtos.Book;
 using BookPortfolio.Interfaces;
 using BookPortfolio.Mappers;
-using BookPortfolio.Models;
-using BookPortfolio.Repositorys;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookPortfolio.Controllers
@@ -29,7 +26,6 @@ namespace BookPortfolio.Controllers
         }
 
         // Post
-
         public IActionResult Create()
         {
             return View();
@@ -59,5 +55,22 @@ namespace BookPortfolio.Controllers
             Console.WriteLine("Found " + books.Count + " books with the query " + query.SearchTerm);
             return View(books);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> BookView(int BookId)
+        {
+
+            var book = await _bookRepository.GetByIdAsync(BookId);
+            if (book != null)
+            {
+                return View(book);
+
+            }
+            else
+            {
+                return StatusCode(500, "Book Not Found");
+            }
+        }
+
     }
 }
