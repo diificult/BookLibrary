@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YcHsfi2/ZGGeMHvvmkxgrVrdrM4HB50grzyDZn16qOk=",
+  "Hash": "521uTYY6UUvx2/pT8UWUiW5XEge01Sox3cmJLVK46Vo=",
   "Source": "BookPortfolio",
   "BasePath": "_content/BookPortfolio",
   "Mode": "Default",
@@ -1527,6 +1527,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\cache\\14813943-M.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\wwwroot\\cache\\8751316-M.jpg",
+      "SourceId": "BookPortfolio",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\wwwroot\\",
+      "BasePath": "_content/BookPortfolio",
+      "RelativePath": "cache/8751316-M#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ngs2hlequw",
+      "Integrity": "l4GI6fD0YbVVSZniMtsDbVH016hH7dNHu/Jr0r4E+7I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\cache\\8751316-M.jpg"
     },
     {
       "Identity": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\wwwroot\\css\\site.css",
@@ -3792,6 +3813,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-BapKweuSh4UiniSkBoI/I40zFmyflUfNb+TZp9P78k0="
+        }
+      ]
+    },
+    {
+      "Route": "cache/8751316-M.jpg",
+      "AssetFile": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\wwwroot\\cache\\8751316-M.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"l4GI6fD0YbVVSZniMtsDbVH016hH7dNHu/Jr0r4E+7I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 10:13:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-l4GI6fD0YbVVSZniMtsDbVH016hH7dNHu/Jr0r4E+7I="
+        }
+      ]
+    },
+    {
+      "Route": "cache/8751316-M.ngs2hlequw.jpg",
+      "AssetFile": "C:\\Users\\OwenWork\\Documents\\Tutorials\\ASPnet\\BookLibrary\\BookPortfolio\\wwwroot\\cache\\8751316-M.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"l4GI6fD0YbVVSZniMtsDbVH016hH7dNHu/Jr0r4E+7I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 10:13:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ngs2hlequw"
+        },
+        {
+          "Name": "label",
+          "Value": "cache/8751316-M.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-l4GI6fD0YbVVSZniMtsDbVH016hH7dNHu/Jr0r4E+7I="
         }
       ]
     },

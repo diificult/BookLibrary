@@ -67,7 +67,7 @@ namespace BookPortfolio.Service
                         string requestUrl = "";
                         if (book.authors == null)
                         {
-                            var resultWorks = await _httpClient.GetAsync($"https://openlibrary.org/{book.works[0]}.json");
+                            var resultWorks = await _httpClient.GetAsync($"https://openlibrary.org/{book.works[0].key}.json");
                             var tasksWorks = JsonConvert.DeserializeObject<OLWorks>(await resultWorks.Content.ReadAsStringAsync());
                             requestUrl = $"https://openlibrary.org/{tasksWorks.authors[0].author.key}.json";
                         }

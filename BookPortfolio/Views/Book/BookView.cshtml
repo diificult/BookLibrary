@@ -1,4 +1,6 @@
 ﻿@model BookPortfolio.Models.Book
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> UserManager
 
 <div class=" d-flex p-5 m-3">
     @{
@@ -17,7 +19,7 @@
     <div class="p-3">
    <h1> Title: @Model.Title</h1>
    <h2> Author: @Model.Author</h2>
-   <div>
+        <div>
        Details:
        @if(Model.ISBN_13 != null) {
            <p>ISBN13: @Model.ISBN_13</p>
@@ -28,6 +30,16 @@
         }
         <p>Language: @Model.language</p>
         <p>Published: @Model.PublishDate</p>
+            @if (UserManager.GetUserName(User) != null)
+            {
+                <form method="post" action="@Url.Action("AddToPortfolio", "Portfolio")">
+                    <input type="hidden" name="bookId" value="@Model.Id" />
+                    <button type="submit">Add to your Bookshelf</button>
+                </form>
+
+
+
+            }
 		</div>
 	</div>
 </div>

@@ -72,7 +72,7 @@ namespace BookPortfolio.Controllers
                 book = await _olService.FindBookByISBNSync(createPortfolioDto.ISBN);
                 if (book == null)
                 {
-                    return View(createPortfolioDto);
+                    return StatusCode(500, "Could not find book, book is null");
                 }
                 else
                 {
@@ -81,9 +81,10 @@ namespace BookPortfolio.Controllers
 
                 }
             }
+
             if (book == null)
             {
-                return View("Book not found");
+                return StatusCode(500, "Book not found");
             }
 
             var userPortfolio = await _portfolioRepository.GetUserPortfolio(user);
